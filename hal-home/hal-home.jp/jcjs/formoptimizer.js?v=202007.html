@@ -1,0 +1,213 @@
+var fo = {'ei':'getElementById','en':'getElementsByName'};
+fo.d = document;
+fo.required = {};
+fo.injection = {};
+fo.format = {};
+fo._allret_req = {}, fo._allret_fom = {};
+
+fo.inject = function(n,o,t) {
+	// ここだけjQueryで・・・
+	var f,code,
+		p = fo.d[fo.en](n)[0].type;
+	if (p=='radio') {
+		code = "f = ($('[name="+'"'+n+'"'+"]:checked').val() " + o + " '" + t + "');";
+	}
+	else if (p=='checkbox') {
+		code = "var node=document.querySelectorAll('[name="+'"'+n+'"'+"]'), c=0;for(var i=0; i<node.length; i++) {c += (node[i].checked && node[i].value "+o+" '"+t+"') ? 1 : 0;}f = (c>0);";
+
+	}
+	else {
+		code = "f = ($('[name="+'"'+n+'"'+"]').val() " + o + " '" + t + "');";
+	}
+	eval(code);
+	return f;
+
+};
+fo.inject_parent_check = function(pname){
+	Object.keys(fo.injection).forEach(function(cname){
+		if(fo.injection[cname][0] == pname){
+			fo._allret_req[cname] = !fo.inject(fo.injection[cname][0], fo.injection[cname][1], fo.injection[cname][2]);
+		}
+	});
+}
+
+fo.check = function(f) {
+	if(!f){
+		var _e = document.querySelectorAll('.fo_err');
+	}else{
+		var _e = document.querySelectorAll('.fo_err[name="'+f+'"], [data-spot="'+f+'"], [data-name="'+f+'"]');
+	}
+	for (var n=0; n<_e.length; n++) {
+		_e[n].classList.remove('fo_err');
+	}
+	var result = {}, returnFlg = true, e = fo.d[fo.ei]('error_disp');
+	if (e) e.style.display = 'none';
+	for (var name in fo.required) {
+		if(!f || f == name){
+			fo.d[fo.ei]('err_'+name).innerHTML = '';
+		}
+		var t = fo.d[fo.en](name);
+		if (!t) {
+			continue;
+		}
+
+		// 条件付き必須
+		if (fo.injection[name] && fo.injection[name].length > 0) {
+			if (!fo.inject(fo.injection[name][0], fo.injection[name][1], fo.injection[name][2])) {
+				// 必須じゃないので戻ります
+				continue;
+			}
+		}
+		for (var n=0; n<t.length; n++) {
+			filled = fo.check_req(t[n]);
+			if(filled){ break; }
+		}
+
+		if (!filled) {
+			fo._allret_req[name] = false;
+			returnFlg &= filled;
+			if(!f == false && f != name){
+				continue;
+			}
+			result[name] = fo.required[name];
+			if (e) e.style.display = 'inline';
+			for (var n=0; n<t.length; n++) {
+				if(t[n].type == 'hidden'){
+					var subs = document.querySelectorAll('[data-spot="'+t[n].name+'"], [data-name="'+t[n].name+'"]');
+					for(var _n=0; _n<subs.length; _n++){
+						if(!fo.check_req(subs[_n])){
+							subs[_n].classList.add("fo_err");
+						}
+					}
+				}else{
+					t[n].classList.add("fo_err");
+				}
+			}
+		}else{
+			fo._allret_req[name] = true;
+		}
+	}
+
+	for (var name in fo.format) {
+		if((!f || f == name) && !fo.required[name] === true){
+			fo.d[fo.ei]('err_'+name).innerHTML = '';
+		}
+		var t = fo.d[fo.en](name);
+		if (!t) {
+			continue;
+		}
+		var err = false, clear=false;
+
+		for (var n=0; n<t.length; n++) {
+			var c = t[n];
+			if (!c || c.tagName!='INPUT') continue;
+			if (c.type!='text' && (c.type=='hidden' && fo.format[name].format != 'ymd')) continue;
+			if (c.value.length == 0) continue;
+			clear = true;
+			switch (fo.format[name].format) {
+				case 'email':
+					r = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+					break;
+				case 'number':
+					r = /^[0-9]+$/;
+					break;
+				case 'telnum':
+					r = /^[0-9]+[-]{0,1}[0-9]+[-]{0,1}[0-9]+$/;
+					break;
+				case 'tel':
+					r = /^[0-9]+-[0-9]+-[0-9]+$/;
+					break;
+				case 'ymd':
+					var _chkval = c.value.split(' ')[0];
+					if(_chkval.length == 0){
+						continue;
+					}
+					if(_chkval.indexOf('-') !== -1){
+						var rA = _chkval.split('-');
+					}else if(_chkval.indexOf('/') !== -1){
+						var rA = (_chkval.split(' ')[0]).split('/');
+					}else{
+						err = true;
+						continue;
+						break;
+					}
+					var y = rA[0];
+					var m = rA[1];
+					var d = rA[2];
+					dt=new Date(y,m-1,d);
+					err = err || (dt.getFullYear()!=y || dt.getMonth()!=m-1 || dt.getDate()!=d);
+					continue;
+					break;
+				default:
+					r = fo.format[name].format;
+					break;
+			}
+			err = err || !(new RegExp(r).test(c.value));
+		}
+
+		if (err) {
+			fo._allret_fom[name] = false;
+			returnFlg &= !err;
+			if(!f == false && f != name){
+				continue;
+			}
+			if (!result[name]) {
+				result[name] = fo.format[name].error;
+			}
+			for (var n=0; n<t.length; n++) {
+				t[n].classList.add("fo_err");
+			}
+			if (e) e.style.display = 'inline';
+		}else{
+			fo._allret_fom[name] = true;
+		}
+	}
+	for(var name in result) {
+		fo.d[fo.ei]('err_' + name).innerHTML = result[name] + "<br />";
+		if (fo.hilights == 'self') {
+			var t = fo.d[fo.en](name);
+		}
+	}
+	
+	if(!f){
+		_e = document.getElementsByClassName('fo_err');
+		if(_e.length > 0){
+			_e[0].scrollIntoView(true);
+		}
+	}else if(!result[f]){
+		fo.inject_parent_check(f);
+	}
+
+	return returnFlg > 0 ? true : false;
+};
+fo.check_req = function(c) {
+	var filled = false;
+	if (c.tagName == 'INPUT') {
+		if (c.type == 'checkbox') {
+			if (c.checked) {
+				filled = true;
+			}
+		}
+		else if (c.type == 'radio') {
+			if (c.checked && (c.value && c.value.length>0)) {
+				filled = true;
+			}
+		}
+		else {
+			if (c.value.length > 0) {
+				filled = true;
+			}
+		}
+	}
+	else if (c.tagName == "SELECT") {
+		if (c.options[c.selectedIndex].value.length > 0) {
+			filled = true;
+		}
+	}
+	else if (c.tagName == "TEXTAREA") {
+		if (c.value.length > 0) {
+			filled = true;
+		}
+	}
+	return filled;
+}
