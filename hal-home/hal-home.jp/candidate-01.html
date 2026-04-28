@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>株式会社enjoy life｜障害のある方のグループホーム</title>
+<meta name="description" content="株式会社enjoy lifeは、障害のある方がご自身のペースで、楽しく自立した暮らしを送るためのグループホームを4拠点で運営しています。">
+<meta name="keywords" content="enjoy life,グループホーム,障害者,共同生活援助,障害福祉,自立支援">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cyan:#22C3E6;
+    --magenta:#E83FA1;
+    --green:#8BD93E;
+    --orange:#F79027;
+    --ink:#2B2B2B;
+    --ink-2:#4a4a4a;
+    --muted:#7a7a7a;
+    --cream:#FFFBF3;
+    --bg:#ffffff;
+    --bg-soft:#FAF7F0;
+    --line:#EEE7D8;
+    --radius:22px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1160px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    display:inline-block;font-size:11px;letter-spacing:.35em;font-weight:800;
+    background:linear-gradient(90deg,var(--cyan),var(--magenta) 40%,var(--orange));
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px;
+  }
+
+  /* ===== Header ===== */
+  header.site{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
+    backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo img{height:38px;width:auto}
+  nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+  nav a{font-size:14px;font-weight:500;color:var(--ink-2);position:relative;padding:6px 0}
+  nav a:hover{color:var(--ink)}
+  nav a::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px;
+    background:linear-gradient(90deg,var(--cyan),var(--magenta));transform:scaleX(0);
+    transform-origin:center;transition:transform .2s ease;
+  }
+  nav a:hover::after{transform:scaleX(1)}
+  .header-ctas{display:flex;gap:10px;align-items:center}
+  .tel{display:flex;flex-direction:column;line-height:1.2;text-align:right;font-size:11px;color:var(--muted)}
+  .tel b{font-family:"Plus Jakarta Sans",sans-serif;font-size:18px;color:var(--ink);font-weight:800;letter-spacing:.02em}
+  .cta{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;
+    background:var(--ink);color:#fff;font-size:14px;font-weight:700;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .cta.accent{background:linear-gradient(135deg,var(--magenta),var(--orange))}
+  .cta:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(0,0,0,.18)}
+  @media(max-width:1000px){
+    nav ul{display:none}
+    .tel{display:none}
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;padding:80px 0 110px;overflow:hidden;background:var(--cream);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:-40px;pointer-events:none;
+    background-image:
+      radial-gradient(circle 7px at 8% 20%, var(--cyan) 45%, transparent 50%),
+      radial-gradient(circle 5px at 18% 70%, var(--orange) 45%, transparent 50%),
+      radial-gradient(circle 6px at 92% 18%, var(--magenta) 45%, transparent 50%),
+      radial-gradient(circle 8px at 88% 78%, var(--green) 45%, transparent 50%),
+      radial-gradient(circle 4px at 40% 12%, var(--magenta) 45%, transparent 50%),
+      radial-gradient(circle 4px at 62% 88%, var(--cyan) 45%, transparent 50%);
+    opacity:.7;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative}
+  h1.title{
+    font-size:58px;line-height:1.22;margin:0 0 22px;font-weight:900;letter-spacing:.01em;
+  }
+  h1.title .marker{
+    position:relative;display:inline-block;padding:0 4px;
+  }
+  h1.title .marker::before{
+    content:"";position:absolute;left:0;right:0;bottom:8px;height:18px;z-index:-1;
+    background:linear-gradient(90deg,var(--cyan),var(--magenta));opacity:.28;border-radius:10px;
+  }
+  h1.title .wave{
+    background:linear-gradient(90deg,var(--magenta),var(--orange));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lead{font-size:17px;color:var(--ink-2);max-width:540px;margin:0 0 28px}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:999px;
+    font-weight:700;font-size:14px;transition:transform .2s,box-shadow .2s;
+  }
+  .btn.primary{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.15)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.22)}
+  .btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:#fff}
+  .btn .arrow{transition:transform .2s}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  .hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+  .hero-tags span{
+    font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;background:#fff;
+    border:1px solid var(--line);display:inline-flex;gap:6px;align-items:center;
+  }
+  .hero-tags .d{width:8px;height:8px;border-radius:50%}
+
+  .hero-visual{position:relative;aspect-ratio:5/6;max-width:520px;margin-left:auto}
+  .hero-visual .photo{
+    width:100%;height:100%;border-radius:40px 40px 40px 120px;object-fit:cover;
+    box-shadow:0 30px 60px rgba(0,0,0,.15);
+  }
+  .hero-visual .blob{position:absolute;border-radius:50%}
+  .hero-visual .b1{width:110px;height:110px;background:var(--cyan);top:-22px;left:-22px;opacity:.85}
+  .hero-visual .b2{width:80px;height:80px;background:var(--magenta);top:30px;right:-26px;opacity:.85}
+  .hero-visual .b3{width:90px;height:90px;background:var(--orange);bottom:-20px;right:40px;opacity:.85}
+  .hero-visual .b4{width:60px;height:60px;background:var(--green);bottom:90px;left:-26px;opacity:.9}
+  .hero-visual .chip{
+    position:absolute;background:#fff;border-radius:16px;padding:12px 16px;
+    box-shadow:0 16px 36px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px;
+  }
+  .hero-visual .chip .icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900}
+  .hero-visual .chip.c-top{top:46px;right:-32px}
+  .hero-visual .chip.c-top .icon{background:var(--magenta)}
+  .hero-visual .chip.c-bot{bottom:36px;left:-40px}
+  .hero-visual .chip.c-bot .icon{background:var(--cyan)}
+  @media(max-width:900px){
+    .hero{padding:56px 0 72px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    h1.title{font-size:34px}
+    .hero-visual{margin:0 auto}
+  }
+
+  /* ===== Sections ===== */
+  section{padding:110px 0}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head h2{font-size:38px;margin:6px 0 14px;font-weight:900;letter-spacing:.02em}
+  .section-head p{color:var(--muted);max-width:620px;margin:0 auto;font-size:15px}
+  @media(max-width:900px){section{padding:72px 0}.section-head h2{font-size:26px}}
+
+  /* ===== About ===== */
+  .about{background:var(--bg-soft)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .about h2{font-size:38px;margin:8px 0 20px;font-weight:900;line-height:1.35}
+  .about h2 .hl{
+    background:linear-gradient(transparent 60%, rgba(139,217,62,.45) 60%);
+  }
+  .about p{color:var(--ink-2);font-size:15.5px}
+  .about-mosaic{
+    display:grid;grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px;gap:14px;
+  }
+  .about-mosaic div{border-radius:22px;overflow:hidden;position:relative}
+  .about-mosaic img{width:100%;height:100%;object-fit:cover}
+  .about-mosaic .big{grid-row:1 / span 2}
+  .about-mosaic .wide{grid-column:1 / span 2}
+  .about-mosaic .badge{
+    position:absolute;bottom:10px;left:10px;background:#fff;border-radius:10px;padding:5px 10px;
+    font-size:11px;font-weight:800;display:flex;align-items:center;gap:6px;
+  }
+  .about-mosaic .badge .d{width:7px;height:7px;border-radius:50%}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}.about h2{font-size:26px}}
+
+  /* ===== 4 Homes ===== */
+  .homes{background:var(--cream)}
+  .homes-intro{
+    display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-bottom:44px;
+  }
+  .homes-intro h2{font-size:40px;margin:0;font-weight:900;letter-spacing:.01em}
+  .homes-intro .sub{color:var(--muted);font-size:14px}
+  .home-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .home-card{
+    background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line);
+    display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;
+  }
+  .home-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.08)}
+  .home-card .thumb{aspect-ratio:4/3;position:relative;overflow:hidden}
+  .home-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .home-card:hover .thumb img{transform:scale(1.06)}
+  .home-card .color-band{height:8px}
+  .home-card.h1 .color-band{background:var(--cyan)}
+  .home-card.h2 .color-band{background:var(--magenta)}
+  .home-card.h3 .color-band{background:var(--green)}
+  .home-card.h4 .color-band{background:var(--orange)}
+  .home-card .pill{
+    position:absolute;top:14px;left:14px;background:#fff;padding:6px 12px;border-radius:999px;
+    font-size:11px;font-weight:800;letter-spacing:.1em;
+  }
+  .home-card.h1 .pill{color:var(--cyan)}
+  .home-card.h2 .pill{color:var(--magenta)}
+  .home-card.h3 .pill{color:#4a8f00}
+  .home-card.h4 .pill{color:var(--orange)}
+  .home-card .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .home-card h3{margin:0;font-size:19px;font-weight:900}
+  .home-card .addr{font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:flex-start}
+  .home-card .addr::before{content:"📍";font-size:12px}
+  .home-card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .home-card .meta span{font-size:11px;background:var(--bg-soft);border:1px solid var(--line);padding:3px 10px;border-radius:999px;color:var(--ink-2);font-weight:600}
+  .home-card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px}
+  .home-card .more{font-size:13px;font-weight:800}
+  .home-card.h1 .more{color:var(--cyan)}
+  .home-card.h2 .more{color:var(--magenta)}
+  .home-card.h3 .more{color:#4a8f00}
+  .home-card.h4 .more{color:var(--orange)}
+  @media(max-width:1000px){.home-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.home-grid{grid-template-columns:1fr}.homes-intro{grid-template-columns:1fr}}
+
+  /* ===== Features ===== */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .feat{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 24px;
+    transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;
+  }
+  .feat:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.06)}
+  .feat .no{
+    font-family:"Plus Jakarta Sans",sans-serif;font-size:14px;font-weight:800;letter-spacing:.2em;margin-bottom:14px;
+  }
+  .feat.f1 .no{color:var(--cyan)}
+  .feat.f2 .no{color:var(--magenta)}
+  .feat.f3 .no{color:var(--green)}
+  .feat.f4 .no{color:var(--orange)}
+  .feat.f5 .no{color:var(--cyan)}
+  .feat.f6 .no{color:var(--magenta)}
+  .feat .ico{
+    width:64px;height:64px;border-radius:20px;display:flex;align-items:center;justify-content:center;
+    font-size:32px;color:#fff;margin-bottom:18px;
+  }
+  .feat.f1 .ico{background:var(--cyan)}
+  .feat.f2 .ico{background:var(--magenta)}
+  .feat.f3 .ico{background:var(--green);color:#1e4300}
+  .feat.f4 .ico{background:var(--orange)}
+  .feat.f5 .ico{background:var(--cyan)}
+  .feat.f6 .ico{background:var(--magenta)}
+  .feat h3{margin:0 0 8px;font-size:18px;font-weight:800}
+  .feat p{margin:0;color:var(--ink-2);font-size:14px;line-height:1.85}
+  @media(max-width:900px){.feat-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.feat-grid{grid-template-columns:1fr}}
+
+  /* ===== Daily life ===== */
+  .daily{background:var(--bg-soft)}
+  .daily-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+  .daily h2{font-size:32px;margin:8px 0 16px;font-weight:900;line-height:1.4}
+  .daily p{color:var(--ink-2)}
+  .timeline{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+  .timeline li{
+    display:grid;grid-template-columns:90px 1fr;gap:16px;align-items:start;
+    padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:14px;
+  }
+  .timeline .t{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;color:var(--ink);font-size:15px}
+  .timeline .a b{display:block;font-size:14.5px;font-weight:800}
+  .timeline .a span{display:block;font-size:12.5px;color:var(--muted)}
+  .timeline li .dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:middle}
+  .daily-img{
+    position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;
+  }
+  .daily-img img{width:100%;height:100%;object-fit:cover}
+  .daily-img .stamp{
+    position:absolute;bottom:18px;left:18px;background:#fff;padding:10px 14px;border-radius:14px;
+    font-size:12px;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.1);
+  }
+  @media(max-width:900px){.daily-grid{grid-template-columns:1fr;gap:40px}.daily h2{font-size:24px}}
+
+  /* ===== Flow ===== */
+  .flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+  .step{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 22px;
+    position:relative;
+  }
+  .step .num{
+    position:absolute;top:-18px;left:22px;width:48px;height:48px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;
+    font-family:"Plus Jakarta Sans",sans-serif;font-size:20px;
+    box-shadow:0 10px 24px rgba(0,0,0,.15);
+  }
+  .step.s1 .num{background:var(--cyan)}
+  .step.s2 .num{background:var(--magenta)}
+  .step.s3 .num{background:var(--green);color:#1e4300}
+  .step.s4 .num{background:var(--orange)}
+  .step h3{margin:18px 0 8px;font-size:17px;font-weight:800}
+  .step p{margin:0;font-size:13.5px;color:var(--ink-2)}
+  @media(max-width:900px){.flow-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.flow-grid{grid-template-columns:1fr}}
+
+  /* ===== Voice ===== */
+  .voices{background:var(--cream)}
+  .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .voice{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .voice .quote{
+    width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:24px;font-weight:900;font-family:Georgia,serif;line-height:1;
+  }
+  .voice.v1 .quote{background:var(--cyan)}
+  .voice.v2 .quote{background:var(--magenta)}
+  .voice.v3 .quote{background:var(--orange)}
+  .voice p.q{font-weight:600;font-size:15px;line-height:1.85}
+  .voice .who{display:flex;gap:12px;align-items:center;margin-top:auto}
+  .voice .avatar{width:44px;height:44px;border-radius:50%;object-fit:cover}
+  .voice .who b{display:block;font-size:13px}
+  .voice .who span{display:block;font-size:11.5px;color:var(--muted)}
+  @media(max-width:900px){.voice-grid{grid-template-columns:1fr}}
+
+  /* ===== FAQ ===== */
+  .faq-list{display:grid;gap:12px;max-width:860px;margin:0 auto}
+  .faq{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px;
+  }
+  .faq summary{
+    list-style:none;cursor:pointer;display:flex;gap:14px;align-items:flex-start;font-weight:800;font-size:15.5px;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{
+    content:"Q";flex:0 0 auto;width:28px;height:28px;border-radius:8px;
+    background:linear-gradient(135deg,var(--cyan),var(--magenta));
+    color:#fff;font-weight:900;display:inline-flex;align-items:center;justify-content:center;
+    font-size:13px;font-family:"Plus Jakarta Sans",sans-serif;
+  }
+  .faq summary::after{content:"＋";margin-left:auto;color:var(--muted);font-weight:700}
+  .faq[open] summary::after{content:"－"}
+  .faq .a{margin:14px 0 0 42px;color:var(--ink-2);font-size:14.5px;line-height:1.95}
+
+  /* ===== News ===== */
+  .news-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .news-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;
+  }
+  .news-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.07)}
+  .news-card .thumb{aspect-ratio:16/10;overflow:hidden}
+  .news-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .news-card:hover .thumb img{transform:scale(1.05)}
+  .news-card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .news-card .meta{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--muted)}
+  .news-card .cat{
+    display:inline-block;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px;color:#fff;
+  }
+  .news-card.n1 .cat{background:var(--cyan)}
+  .news-card.n2 .cat{background:var(--magenta)}
+  .news-card.n3 .cat{background:var(--orange)}
+  .news-card h3{margin:0;font-size:15.5px;font-weight:700;line-height:1.7}
+  @media(max-width:900px){.news-list{grid-template-columns:1fr}}
+
+  /* ===== CTA band ===== */
+  .cta-section{padding-top:0}
+  .cta-band{
+    position:relative;overflow:hidden;border-radius:32px;padding:56px 56px;color:#fff;
+    background:linear-gradient(120deg,var(--cyan),var(--magenta) 55%,var(--orange));
+    display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center;
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+  }
+  .cta-band::before,.cta-band::after{
+    content:"";position:absolute;border-radius:50%;opacity:.45;filter:blur(2px);
+  }
+  .cta-band::before{width:240px;height:240px;background:var(--green);top:-80px;right:-40px}
+  .cta-band::after{width:180px;height:180px;background:var(--cyan);bottom:-70px;left:15%}
+  .cta-band .left h2{margin:0;font-size:28px;font-weight:900;line-height:1.4;position:relative}
+  .cta-band .left p{margin:10px 0 0;opacity:.95;font-size:14px;position:relative}
+  .cta-band .right{position:relative;display:grid;gap:10px}
+  .cta-band .right .btn{background:#fff;color:var(--ink);justify-content:space-between}
+  .cta-band .right .btn.mail{background:rgba(255,255,255,.2);color:#fff;border:1.5px solid #fff}
+  .cta-band .right .btn.mail:hover{background:#fff;color:var(--ink)}
+  .cta-band .right .tel-big{
+    background:#fff;color:var(--ink);border-radius:16px;padding:14px 20px;font-weight:800;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .cta-band .right .tel-big b{font-family:"Plus Jakarta Sans",sans-serif;font-size:22px;letter-spacing:.02em}
+  .cta-band .right .tel-big span{font-size:11px;color:var(--muted);font-weight:600}
+  @media(max-width:900px){.cta-band{grid-template-columns:1fr;padding:36px 28px}.cta-band .left h2{font-size:22px}}
+
+  /* ===== Footer ===== */
+  footer.site{background:#1c1916;color:#bdb6a8;padding:64px 0 32px}
+  footer.site a{color:#bdb6a8}
+  footer.site a:hover{color:#fff}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px}
+  .foot-grid h4{color:#fff;font-size:12px;margin:0 0 16px;letter-spacing:.25em;font-weight:800}
+  .foot-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:14px}
+  .brand-foot .logo img{height:42px;filter:brightness(0) invert(1)}
+  .brand-foot p{font-size:13px;color:#9b9486;margin:16px 0 0;max-width:320px;line-height:1.9}
+  .socials{display:flex;gap:10px;margin-top:18px}
+  .socials a{
+    width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+    background:#2a2723;font-size:13px;font-weight:800;
+  }
+  .socials a:hover{background:linear-gradient(135deg,var(--cyan),var(--magenta));color:#fff}
+  .copy{border-top:1px solid #2a2723;margin-top:48px;padding-top:20px;font-size:12px;color:#7a756b;text-align:center}
+  @media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+</style>
+</head>
+<body id="top">
+
+<header class="site">
+  <div class="container nav">
+    <a class="logo" href="#top" aria-label="株式会社enjoy life">
+      <img src="img_el/logo.jpg" alt="enjoy life">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#homes">ホーム一覧</a></li>
+        <li><a href="#features">特長</a></li>
+        <li><a href="#flow">入居までの流れ</a></li>
+        <li><a href="#voice">ご家族の声</a></li>
+        <li><a href="#news">お知らせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-ctas">
+      <div class="tel">
+        <span>お問い合わせ</span>
+        <b>03-0000-0000</b>
+      </div>
+      <a class="cta accent" href="#contact">見学・体験入居</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">GROUP HOME FOR EVERY LIFE</span>
+        <h1 class="title">
+          自分のペースで、<br>
+          <span class="marker">毎日を</span><span class="wave">楽しむ</span>。
+        </h1>
+        <p class="lead">
+          株式会社enjoy lifeは、障害のある方が安心して自分らしく暮らせるグループホームを、都内を中心に<b>4拠点</b>で運営しています。
+          少人数制のあたたかな住まいと、一人ひとりに合わせた支援で、"楽しむ"毎日をご一緒します。
+        </p>
+        <div class="btn-row">
+          <a class="btn primary" href="#homes">ホームを見る <span class="arrow">→</span></a>
+          <a class="btn ghost" href="#contact">見学・体験入居のご相談</a>
+        </div>
+        <div class="hero-tags">
+          <span><span class="d" style="background:var(--cyan)"></span>少人数制</span>
+          <span><span class="d" style="background:var(--magenta)"></span>24時間サポート</span>
+          <span><span class="d" style="background:var(--green)"></span>個室あり</span>
+          <span><span class="d" style="background:var(--orange)"></span>就労先との連携</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="blob b4"></span>
+        <img class="photo" src="https://picsum.photos/seed/enjoylife-home/800/960" alt="グループホームでの暮らし">
+        <div class="chip c-top"><span class="icon">♡</span> あたたかな<br>共同生活</div>
+        <div class="chip c-bot"><span class="icon">◎</span> 4拠点で<br>運営中</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div>
+        <span class="eyebrow">ABOUT US</span>
+        <h2>「 <span class="hl">楽しむ</span> 」を、<br>暮らしの真ん中に。</h2>
+        <p>
+          enjoy lifeのグループホームは、障害のある方が<b>自分らしく、自立した毎日</b>を送るための住まいです。
+          共同生活のあたたかさを大切にしながら、「やってみたい」「できた！」という小さな体験を、スタッフと仲間が一緒に喜びます。
+        </p>
+        <p>
+          食事・掃除・金銭管理などの生活支援はもちろん、日中活動・就労先との連携や、通院・役所手続きへの同行まで、
+          一人ひとりの状況に合わせてきめ細かくサポートします。
+        </p>
+        <div class="btn-row" style="margin-top:10px">
+          <a class="btn ghost" href="#features">私たちの特長 <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="about-mosaic">
+        <div class="big">
+          <img src="https://picsum.photos/seed/el-about1/700/900" alt="">
+          <span class="badge"><span class="d" style="background:var(--cyan)"></span>LIVING</span>
+        </div>
+        <div>
+          <img src="https://picsum.photos/seed/el-about2/500/400" alt="">
+          <span class="badge"><span class="d" style="background:var(--magenta)"></span>MEAL</span>
+        </div>
+        <div>
+          <img src="https://picsum.photos/seed/el-about3/500/400" alt="">
+          <span class="badge"><span class="d" style="background:var(--orange)"></span>SUPPORT</span>
+        </div>
+        <div class="wide">
+          <img src="https://picsum.photos/seed/el-about4/900/320" alt="">
+          <span class="badge"><span class="d" style="background:var(--green)"></span>EVENT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Homes -->
+  <section id="homes" class="homes">
+    <div class="container">
+      <div class="homes-intro">
+        <div>
+          <span class="eyebrow">OUR HOMES</span>
+          <h2>4つのホーム</h2>
+        </div>
+        <div class="sub">
+          それぞれのホームで、少人数制ならではの<br>あたたかな共同生活を大切にしています。
+        </div>
+      </div>
+      <div class="home-grid">
+        <!-- Home 1: そら (cyan) -->
+        <div class="home-card h1">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/el-home-sora/600/450" alt="">
+            <span class="pill">HOME 01</span>
+          </div>
+          <div class="color-band"></div>
+          <div class="body">
+            <h3>そらホーム</h3>
+            <div class="addr">東京都新宿区（最寄駅：新宿駅 徒歩8分）</div>
+            <div class="meta">
+              <span>定員 4名</span>
+              <span>男性専用</span>
+              <span>個室完備</span>
+            </div>
+            <div class="foot">
+              <span class="more">詳しく見る →</span>
+            </div>
+          </div>
+        </div>
+        <!-- Home 2: はな (magenta) -->
+        <div class="home-card h2">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/el-home-hana/600/450" alt="">
+            <span class="pill">HOME 02</span>
+          </div>
+          <div class="color-band"></div>
+          <div class="body">
+            <h3>はなホーム</h3>
+            <div class="addr">東京都豊島区（最寄駅：池袋駅 徒歩10分）</div>
+            <div class="meta">
+              <span>定員 4名</span>
+              <span>女性専用</span>
+              <span>個室完備</span>
+            </div>
+            <div class="foot">
+              <span class="more">詳しく見る →</span>
+            </div>
+          </div>
+        </div>
+        <!-- Home 3: みどり (green) -->
+        <div class="home-card h3">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/el-home-midori/600/450" alt="">
+            <span class="pill">HOME 03</span>
+          </div>
+          <div class="color-band"></div>
+          <div class="body">
+            <h3>みどりホーム</h3>
+            <div class="addr">神奈川県横浜市（最寄駅：横浜駅 徒歩12分）</div>
+            <div class="meta">
+              <span>定員 5名</span>
+              <span>男女対応</span>
+              <span>庭付き</span>
+            </div>
+            <div class="foot">
+              <span class="more">詳しく見る →</span>
+            </div>
+          </div>
+        </div>
+        <!-- Home 4: ひかり (orange) -->
+        <div class="home-card h4">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/el-home-hikari/600/450" alt="">
+            <span class="pill">HOME 04</span>
+          </div>
+          <div class="color-band"></div>
+          <div class="body">
+            <h3>ひかりホーム</h3>
+            <div class="addr">千葉県船橋市（最寄駅：船橋駅 徒歩9分）</div>
+            <div class="meta">
+              <span>定員 4名</span>
+              <span>男性専用</span>
+              <span>築浅</span>
+            </div>
+            <div class="foot">
+              <span class="more">詳しく見る →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">OUR FEATURES</span>
+        <h2>enjoy lifeの特長</h2>
+        <p>「安心」と「楽しい」の両立にこだわった、6つのこだわりポイントをご紹介します。</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat f1">
+          <div class="no">FEATURE 01</div>
+          <div class="ico">家</div>
+          <h3>少人数制のあたたかな住まい</h3>
+          <p>定員4〜5名の家庭的な環境で、入居者様同士・スタッフとの関係をゆっくり築くことができます。</p>
+        </div>
+        <div class="feat f2">
+          <div class="no">FEATURE 02</div>
+          <div class="ico">◎</div>
+          <h3>24時間のサポート体制</h3>
+          <p>世話人・生活支援員が常駐し、夜間のトラブルや体調の変化にも安心して対応できる体制です。</p>
+        </div>
+        <div class="feat f3">
+          <div class="no">FEATURE 03</div>
+          <div class="ico">♥</div>
+          <h3>一人ひとりに合わせた支援</h3>
+          <p>サービス管理責任者が個別支援計画を作成し、ご本人の希望と目標に沿った暮らしを一緒にデザインします。</p>
+        </div>
+        <div class="feat f4">
+          <div class="no">FEATURE 04</div>
+          <div class="ico">★</div>
+          <h3>就労・日中活動との連携</h3>
+          <p>就労継続支援B型や生活介護、一般就労先との連携もスムーズ。働く暮らしを無理なく両立できます。</p>
+        </div>
+        <div class="feat f5">
+          <div class="no">FEATURE 05</div>
+          <div class="ico">駅</div>
+          <h3>駅近・バリアフリー</h3>
+          <p>どのホームも最寄駅から徒歩10分圏内。段差の少ない構造や安全設計に配慮しています。</p>
+        </div>
+        <div class="feat f6">
+          <div class="no">FEATURE 06</div>
+          <div class="ico">♪</div>
+          <h3>季節のイベントとレクリエーション</h3>
+          <p>お誕生日会・外食・映画鑑賞・季節のお出かけなど、「楽しむ時間」を毎月ご用意しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Life -->
+  <section class="daily">
+    <div class="container daily-grid">
+      <div class="daily-img">
+        <img src="https://picsum.photos/seed/el-daily/800/1000" alt="一日の様子">
+        <span class="stamp">🌞 ある1日の様子</span>
+      </div>
+      <div>
+        <span class="eyebrow">A DAY AT ENJOY LIFE</span>
+        <h2>仲間とスタッフと過ごす、<br>無理のない1日。</h2>
+        <p>朝の準備から就寝まで、スタッフがそっと寄り添い、必要なサポートをお届けします。「できること」を少しずつ増やしていける、安心のリズムです。</p>
+        <ul class="timeline">
+          <li>
+            <div class="t">7:00</div>
+            <div class="a"><b><span class="dot" style="background:var(--cyan)"></span>起床・朝食</b><span>スタッフと一緒に朝の準備。朝食は全員で</span></div>
+          </li>
+          <li>
+            <div class="t">9:00</div>
+            <div class="a"><b><span class="dot" style="background:var(--magenta)"></span>日中活動へ出発</b><span>就労先・作業所・生活介護などへ送り出し</span></div>
+          </li>
+          <li>
+            <div class="t">17:30</div>
+            <div class="a"><b><span class="dot" style="background:var(--green)"></span>帰宅・自由時間</b><span>お風呂やテレビ、趣味の時間を自分のペースで</span></div>
+          </li>
+          <li>
+            <div class="t">19:00</div>
+            <div class="a"><b><span class="dot" style="background:var(--orange)"></span>夕食・団らん</b><span>栄養バランスに配慮した夕食をみんなで</span></div>
+          </li>
+          <li>
+            <div class="t">22:00</div>
+            <div class="a"><b><span class="dot" style="background:var(--cyan)"></span>消灯・おやすみ</b><span>夜間はスタッフが常駐、安心してお休みいただけます</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section id="flow">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">ADMISSION FLOW</span>
+        <h2>入居までの流れ</h2>
+        <p>お気軽にご相談ください。受給者証をお持ちでない方も、取得のサポートから行います。</p>
+      </div>
+      <div class="flow-grid">
+        <div class="step s1">
+          <div class="num">1</div>
+          <h3>お問い合わせ</h3>
+          <p>お電話・フォームからお気軽にご連絡ください。ご本人・ご家族・支援者の方、どなたからでもOKです。</p>
+        </div>
+        <div class="step s2">
+          <div class="num">2</div>
+          <h3>見学・ご相談</h3>
+          <p>ご希望のホームを見学いただき、スタッフと今の生活・ご希望について伺います。</p>
+        </div>
+        <div class="step s3">
+          <div class="num">3</div>
+          <h3>体験入居</h3>
+          <p>まずは数日〜1週間、実際の生活を体験。雰囲気や相性を確かめていただけます。</p>
+        </div>
+        <div class="step s4">
+          <div class="num">4</div>
+          <h3>ご契約・ご入居</h3>
+          <p>受給者証の確認・契約手続きを経て、新しい暮らしがスタート。引っ越しもサポートします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voice -->
+  <section id="voice" class="voices">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">VOICE</span>
+        <h2>入居者さま・ご家族の声</h2>
+        <p>実際にenjoy lifeで暮らす方、ご家族からお寄せいただいた声を紹介します。</p>
+      </div>
+      <div class="voice-grid">
+        <div class="voice v1">
+          <div class="quote">"</div>
+          <p class="q">スタッフさんが本人のペースを尊重してくれるので、親として安心して任せられています。</p>
+          <div class="who">
+            <img class="avatar" src="https://i.pravatar.cc/100?img=47" alt="">
+            <div><b>Mさんのご家族</b><span>そらホーム</span></div>
+          </div>
+        </div>
+        <div class="voice v2">
+          <div class="quote">"</div>
+          <p class="q">料理や洗濯を少しずつできるようになって、自信がつきました。仲間と過ごす夜ご飯が楽しいです。</p>
+          <div class="who">
+            <img class="avatar" src="https://i.pravatar.cc/100?img=32" alt="">
+            <div><b>Kさん（20代・女性）</b><span>はなホーム</span></div>
+          </div>
+        </div>
+        <div class="voice v3">
+          <div class="quote">"</div>
+          <p class="q">体調が不安定な時期も丁寧に寄り添ってもらえて、通院の付き添いまでしてくれて感謝しています。</p>
+          <div class="who">
+            <img class="avatar" src="https://i.pravatar.cc/100?img=12" alt="">
+            <div><b>Tさんのご家族</b><span>ひかりホーム</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>よくあるご質問</h2>
+        <p>入居前に多くいただくご質問をまとめました。その他のご質問はお気軽にお問い合わせください。</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq">
+          <summary>対象となる障害種別を教えてください。</summary>
+          <div class="a">精神・知的・身体障害のいずれかで、障害支援区分の認定を受けている方が対象です。受給者証がない場合も、取得のサポートを行っていますのでご安心ください。</div>
+        </details>
+        <details class="faq">
+          <summary>費用はどれくらいかかりますか？</summary>
+          <div class="a">家賃・食費・水道光熱費・日用品費などで月額おおよそ6〜8万円が目安です。自治体の家賃助成や生活保護の併用も可能ですので、個別にご案内します。</div>
+        </details>
+        <details class="faq">
+          <summary>見学や体験入居はできますか？</summary>
+          <div class="a">見学・体験入居はいつでも受け付けています。まずは数日間の体験から、暮らしのイメージを掴んでいただくことをおすすめしています。</div>
+        </details>
+        <details class="faq">
+          <summary>日中の過ごし方に決まりはありますか？</summary>
+          <div class="a">ご本人の希望に合わせて、就労継続支援・生活介護・一般就労など自由に選択いただけます。日中活動先の見学や選定もサポートします。</div>
+        </details>
+        <details class="faq">
+          <summary>スタッフはどのような方がいますか？</summary>
+          <div class="a">サービス管理責任者を中心に、世話人・生活支援員・看護師連携など、多様な資格と経験を持つスタッフがチームで支援にあたっています。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">NEWS</span>
+        <h2>お知らせ</h2>
+        <p>ホームの日々やイベント、募集情報などをお届けします。</p>
+      </div>
+      <div class="news-list">
+        <a class="news-card n1" href="#">
+          <div class="thumb"><img src="https://picsum.photos/seed/el-news1/600/400" alt=""></div>
+          <div class="body">
+            <div class="meta"><span class="cat">お知らせ</span><time>2026.04.10</time></div>
+            <h3>ひかりホーム（千葉）に新規ご入居の方を募集しています</h3>
+          </div>
+        </a>
+        <a class="news-card n2" href="#">
+          <div class="thumb"><img src="https://picsum.photos/seed/el-news2/600/400" alt=""></div>
+          <div class="body">
+            <div class="meta"><span class="cat">イベント</span><time>2026.03.20</time></div>
+            <h3>春のお花見ピクニックを全ホーム合同で開催しました🌸</h3>
+          </div>
+        </a>
+        <a class="news-card n3" href="#">
+          <div class="thumb"><img src="https://picsum.photos/seed/el-news3/600/400" alt=""></div>
+          <div class="body">
+            <div class="meta"><span class="cat">採用</span><time>2026.02.15</time></div>
+            <h3>世話人・生活支援員を募集中です（未経験歓迎）</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta-section">
+    <div class="container">
+      <div class="cta-band">
+        <div class="left">
+          <h2>まずは、お気軽にご相談ください。</h2>
+          <p>見学・体験入居のご予約、資料請求、空室状況のご確認など、どんなことでもお問い合わせいただけます。</p>
+        </div>
+        <div class="right">
+          <div class="tel-big">
+            <div>
+              <span>お電話でのお問い合わせ（平日 9:00〜18:00）</span>
+              <b>03-0000-0000</b>
+            </div>
+          </div>
+          <a class="btn mail" href="mailto:info@enjoy-life.example.co.jp">メールで問い合わせる <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="container foot-grid">
+    <div class="brand-foot">
+      <a class="logo" href="#top"><img src="img_el/logo.jpg" alt="enjoy life"></a>
+      <p>〒100-0001<br>東京都千代田区1-1-1 enjoy lifeビル<br>TEL: 03-0000-0000　／　FAX: 03-0000-0001</p>
+      <div class="socials">
+        <a href="#" aria-label="X">X</a>
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="Blog">B</a>
+      </div>
+    </div>
+    <div>
+      <h4>HOMES</h4>
+      <ul>
+        <li><a href="#homes">そらホーム（新宿）</a></li>
+        <li><a href="#homes">はなホーム（池袋）</a></li>
+        <li><a href="#homes">みどりホーム（横浜）</a></li>
+        <li><a href="#homes">ひかりホーム（船橋）</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>ABOUT</h4>
+      <ul>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#features">特長</a></li>
+        <li><a href="#flow">入居までの流れ</a></li>
+        <li><a href="#voice">ご家族の声</a></li>
+        <li><a href="#news">お知らせ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>SUPPORT</h4>
+      <ul>
+        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="#">資料請求</a></li>
+        <li><a href="#">採用情報</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container copy">© 2026 enjoy life Inc. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

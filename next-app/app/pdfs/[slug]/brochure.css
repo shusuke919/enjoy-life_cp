@@ -1,0 +1,149 @@
+.pdf-page {
+  margin: 0;
+  background: #2b2622;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-zen-maru), var(--font-noto-sans-jp), sans-serif;
+}
+
+.pdf-doc {
+  width: 595px;
+  height: 842px;
+  background: #fffbf3;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  padding: 60px 50px;
+  box-sizing: border-box;
+  position: relative;
+  --accent: #5bb8d6;
+}
+
+.pdf-doc .badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #3d3733;
+  color: #fbf6ec;
+  letter-spacing: 0.15em;
+}
+
+.pdf-doc .label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+}
+
+.pdf-doc h1 {
+  font-size: 38px;
+  line-height: 1.4;
+  margin: 14px 0 8px;
+}
+
+.pdf-doc h1 small {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7a6e63;
+  margin-top: 4px;
+  letter-spacing: 0.1em;
+}
+
+.pdf-doc .area {
+  color: #7a6e63;
+  font-size: 13px;
+  margin-bottom: 36px;
+}
+
+.pdf-doc .photo {
+  aspect-ratio: 16 / 10;
+  opacity: 0.15;
+  border-radius: 12px;
+  margin-bottom: 28px;
+}
+
+.pdf-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.pdf-doc th,
+.pdf-doc td {
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px dashed #eadfcd;
+}
+
+.pdf-doc th {
+  width: 90px;
+  color: #7a6e63;
+  font-weight: 600;
+}
+
+.pdf-doc p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #3d3733;
+  margin: 0 0 14px;
+}
+
+.pdf-doc .foot {
+  position: absolute;
+  bottom: 36px;
+  left: 50px;
+  right: 50px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #a89b8e;
+  padding-top: 14px;
+  border-top: 1px solid #eadfcd;
+}
+
+.pdf-doc .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  background: var(--accent);
+}
+
+.pdf-toolbar {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.pdf-toolbar a,
+.pdf-toolbar button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.pdf-toolbar a:hover,
+.pdf-toolbar button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media print {
+  .pdf-page { background: #fff; }
+  .pdf-doc { box-shadow: none; }
+  .pdf-toolbar { display: none; }
+}
