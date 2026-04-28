@@ -1,0 +1,191 @@
+var cmsBlogParts = [];
+
+var $jc = typeof $ == 'function' ? $:jQuery;
+
+$(document).ready(function(){
+	
+	cmsBlogParts['themaS'] = $jc('.cms_bsp_thema');
+	
+	if(cmsBlogParts['themaS'].length == 1){
+		$jc.ajax({
+			type: 'POST',
+			url: '/jcapi/_jc_blogparts.php',
+			dataType: 'html',
+			data: {pt:"thema",
+				g: !cmsBlogParts['themaS'][0].children.gid === false ? cmsBlogParts['themaS'][0].children.gid.value : 0,
+				dir: !cmsBlogParts['themaS'][0].children.dir === false ? cmsBlogParts['themaS'][0].children.dir.value : '',
+				cnt: !cmsBlogParts['themaS'][0].children.cnt === false ? cmsBlogParts['themaS'][0].children.cnt.value : 0,
+				},
+			context: 0,
+			success: function(data, textStatus, jqXHR){
+				$jc(cmsBlogParts['themaS'][this.context]).html(data);
+				return false;
+			},
+			error:function(){
+				return false;
+			}
+		});
+	}
+	
+	cmsBlogParts['newestS'] = $jc('.cms_bsp_newest');
+	
+	if(cmsBlogParts['newestS'].length == 1){
+		$jc.ajax({
+			type: 'POST',
+			url: '/jcapi/_jc_blogparts.php',
+			dataType: 'html',
+			data: {pt:"newest",
+				g: !cmsBlogParts['newestS'][0].children.gid === false ? cmsBlogParts['newestS'][0].children.gid.value : 0,
+				dir: !cmsBlogParts['newestS'][0].children.dir === false ? cmsBlogParts['newestS'][0].children.dir.value : '',
+				cnt: !cmsBlogParts['newestS'][0].children.cnt === false ? cmsBlogParts['newestS'][0].children.cnt.value : 0,
+				},
+			context: 0,
+			success: function(data, textStatus, jqXHR){
+				$jc(cmsBlogParts['newestS'][this.context]).html(data);
+				return false;
+			},
+			error:function(){
+				return false;
+			}
+		});
+	}
+	
+	cmsBlogParts['calendarS'] = $jc('.cms_bsp_calendar');
+	
+	if(cmsBlogParts['calendarS'].length == 1){
+		$jc.ajax({
+			type: 'POST',
+			url: '/jcapi/_jc_blogparts.php',
+			dataType: 'html',
+			data: {pt:"calendar",
+				g: !cmsBlogParts['calendarS'][0].children.gid === false ? cmsBlogParts['calendarS'][0].children.gid.value : 0,
+				dir: !cmsBlogParts['calendarS'][0].children.dir === false ? cmsBlogParts['calendarS'][0].children.dir.value : '',
+				m: !cmsBlogParts['calendarS'][0].children.ym === false ? cmsBlogParts['calendarS'][0].children.ym.value : '',
+				idx: 0
+				},
+			context: 0,
+			success:function(data, textStatus, jqXHR){
+				$jc(cmsBlogParts['calendarS'][this.context]).html(data);
+			},
+			error:function(){
+			}
+		});
+	}else{
+		if($jc('.cms_bsp_calendar_api').length == 1){
+			cmsBlogParts['calendarS'] = $jc('.cms_bsp_calendar_api');
+		}
+	}
+	
+	cmsBlogParts['monthlyS'] = $jc('.cms_bsp_monthly');
+	
+	if(cmsBlogParts['monthlyS'].length == 1){
+		$jc.ajax({
+			type: 'POST',
+			url: '/jcapi/_jc_blogparts.php',
+			dataType: 'html',
+			data: {pt:"monthly",
+				g: !cmsBlogParts['monthlyS'][0].children.gid === false ? cmsBlogParts['monthlyS'][0].children.gid.value : 0,
+				dir: !cmsBlogParts['monthlyS'][0].children.dir === false ? cmsBlogParts['monthlyS'][0].children.dir.value : '',
+				cnt: !cmsBlogParts['monthlyS'][0].children.cnt === false ? cmsBlogParts['monthlyS'][0].children.cnt.value : 0,
+				},
+			context: 0,
+			success:function(data, textStatus, jqXHR){
+				$jc(cmsBlogParts['monthlyS'][this.context]).html(data);
+				return false;
+			},
+			error:function(){
+				return false;
+			}
+		});
+	}
+	
+	var cooppage = $jc('input.jc_js_cooppage[type=hidden][name=pid]');
+	if(cooppage.length > 0){
+		$jc.ajax({
+			type: 'POST',
+			url: '/jcapi/_jc_cooppage.php',
+			dataType: 'html',
+			data: {pid:cooppage[0].value,
+			},
+			context: 0,
+			success:function(data, textStatus, jqXHR){
+				$jc('input[type=hidden][name=pid]').before(data);
+				return false;
+			},
+			error:function(){
+				return false;
+			}
+		});
+	}
+	
+	
+	//PC/SP
+	$jc('._jcpage_spbtn_area').hide();
+	var st=document.cookie.indexOf("_jcpage_spbtn=");
+	var ed=document.cookie.indexOf(";",st);
+	ed = ed == -1 ? document.cookie.length:ed;
+	var spbtn = st != -1 ? document.cookie.substring(st+14,ed) : "";
+	if(spbtn == 1 || spbtn == "1"){
+		$jc('._jcpage_spbtn_area').show();
+		$jc('._jcpage_spbtn').click(function(){
+			document.cookie="push_rhs_pc="+$jc(this).data('pc')+"; path=/";
+			document.cookie="push_mikke_pc="+$jc(this).data('pc')+"; path=/";
+			location.reload();
+		});
+	}
+	
+	if(typeof $jc().fancybox == "function"){
+		if($jc('img._fancyimg').length > 0){
+			$jc('img._fancyimg').each(function(){
+				if($jc(this).parents('a').length == 0){
+					$jc(this).wrap('<a class="fancybox" data-fancybox-group="gallery" href="https://hal-home.jp/jcjs/'+$jc(this).attr('src')+'"></a>');
+				}
+			});
+		}
+		$jc('.fancybox').fancybox();
+	}
+	
+	if(typeof $jc.cookie != 'function'){
+		//クッキーjs使えないことがあるようなので
+		$jc('#show_pc').unbind('click');
+		$jc('#show_smart').unbind('click');
+		if(typeof jQuery.cookie == "function"){
+			$jc("#show_pc").click(function(){
+				jQuery.cookie("push_mikke_pc","1",{path:"/"});
+				location.reload();
+			});
+			$jc("#show_smart").click(function(){
+				jQuery.cookie("push_mikke_pc","",{expires:-1,path:"/"});
+				location.reload();
+			});
+		}else{
+			$jc("#show_pc").click(function(){
+				document.cookie="push_mikke_pc=1; path=/";
+			});
+			$jc("#show_smart").click(function(){
+				document.cookie="push_mikke_pc=; path=/";
+			});
+		}
+	}
+});
+
+function moveCalendar(g, ym, idx){
+	$jc.ajax({
+		type: 'POST',
+		url: '/jcapi/_jc_blogparts.php',
+		dataType: 'html',
+		data: {pt:"calendar",
+			g:g,
+			m: ym,
+			idx: idx
+			},
+		context: idx,
+		error:function(){
+			return false;
+		}
+	}).done(function(data, textStatus, jqXHR){
+		$jc(cmsBlogParts['calendarS'][this.context]).html(data);
+		return false;
+	});
+	
+}

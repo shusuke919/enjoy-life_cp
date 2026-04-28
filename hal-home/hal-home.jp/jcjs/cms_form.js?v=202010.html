@@ -1,0 +1,336 @@
+var $jc = typeof $ == 'function' ? $:jQuery;
+var wh_max = window.innerWidth >= 600 ? 300 : 120;
+
+$jc(document).ready(function(){
+
+	if(typeof fo == 'object' ){
+		$jc('.jcjs_sferr').each(function(){
+			this.id = 'err_'+this.id;
+		});
+		
+		var getlist = $jc('.jcjs_sf');
+		var lastname = '';
+		var wname = '';
+		for(g=0; g<getlist.length; g++){
+			wname = getlist[g].name;
+			if(lastname != wname){
+				fo._allret_req[wname] = true;
+				if($jc(getlist[g]).hasClass('requ')){
+					fo.required[wname] = '※必須項目です。';
+					fo._allret_req[wname] = false;
+				}
+				if($jc(getlist[g]).hasClass('requif')){
+					fo.required[wname] = '※必須項目です。';
+					fo.injection[wname] = [$jc(getlist[g]).data('reqift'), $jc(getlist[g]).data('reqifs'), $jc(getlist[g]).data('reqifv')];
+					fo._allret_req[wname] = !fo.inject(fo.injection[wname][0], fo.injection[wname][1], fo.injection[wname][2]);
+				}
+				if($jc(getlist[g]).hasClass('email')){
+					fo.format[wname] = {format: 'email', error: '※メールアドレスが不正です。'};
+				}
+				if($jc(getlist[g]).hasClass('number')){
+					fo.format[wname] = {format: 'number', error: '※半角数字のみで入力してください'};
+				}
+				if($jc(getlist[g]).hasClass('telnum')){
+					fo.format[wname] = {format: 'telnum', error: '※00-0000-0000の形式か、数字のみで入力してください'};
+				}
+				if($jc(getlist[g]).hasClass('tel')){
+					fo.format[wname] = {format: 'tel', error: '※ 00-0000-0000の形式で入力してください'};
+				}
+				if($jc(getlist[g]).hasClass('ymd')){
+					fo.format[wname] = {format: 'ymd', error: '※ 日付が不正です'};
+				}
+				lastname = wname;
+			}
+			
+			//誰でも動かす
+			if(getlist[g].type == 'radio' || getlist[g].type == 'checkbox' || getlist[g].type == 'hidden'){
+				$jc(getlist[g]).change(function(){
+					cmsform_btn_change(this.name, fo.check(this.name));
+				});
+			}else{
+				$jc(getlist[g]).on('change, blur', function(){
+					cmsform_btn_change(this.name, fo.check(this.name));
+				});
+			}
+		}
+		
+		$jc('[data-kind=y],[data-kind=m],[data-kind=d]').each(function(){
+			$(this).attr('data-myopts', this.innerHTML.trim());
+		});
+		
+		$jc('[data-spot]').on('change, blur', function(){
+			var name = $jc(this).data('spot');
+			var setval = '', setdate = '';
+			
+			var requ_flg = $jc('input[name="'+name+'"]').hasClass('requ');
+			if(!requ_flg && $jc('input[name="'+name+'"]').hasClass('requif')){
+				requ_flg = $jc('[name="'+$jc('input[name="'+name+'"]').data('reqift')+'"]').val() ==  $jc('input[name="'+name+'"]').data('reqifv');
+			}
+			
+			//ymなら mdの中身を変えたい
+			if($jc(this).data('kind') == 'y' || $jc(this).data('kind') == 'm'){
+				var _min = $jc('input[data-name="'+name+'"]').data('s');
+				var _max = $jc('input[data-name="'+name+'"]').data('e');
+				
+				var _myopts = null, _setopts = [], _tmp_ymd = '';
+				if($jc(this).data('kind') == 'y'){
+					var _y = $jc(this).val();
+					//月
+					var _m = $jc('[data-spot="'+name+'"][data-kind=m]').val();
+					$($jc('[data-spot="'+name+'"][data-kind=m]').data('myopts')).each(function(i, row){
+						var _set = false;
+						if($(row).val() == '' || _y == ''){
+							_set = true;
+						}else{
+							var _d1 = _y+'-'+ $(row).val()+'-01';
+							var _de = moment(_d1).endOf('month').format('YYYY-MM-DD');
+							if(moment(_d1).isAfter(moment(_max)) || moment(_de).isBefore(moment(_min))){
+							
+							}else{
+								_set = true;
+							}
+						}
+						if(_set){
+							if($(row).val() == _m){ $(row).prop('selected', true); };
+							_setopts.push($(row));
+						}
+					});
+					$jc('[data-spot="'+name+'"][data-kind=m]').html(_setopts);
+					_setopts = [];
+				}else{
+					var _y = $jc('[data-spot="'+name+'"][data-kind=y]').val();
+					var _m = $(this).val();
+				}
+				//日
+				var _d = $jc('[data-spot="'+name+'"][data-kind=d]').val();
+				$($jc('[data-spot="'+name+'"][data-kind=d]').data('myopts')).each(function(i, row){
+					var _set = false;
+					if($(row).val() == '' || _y == '' || _m == ''){
+						_set = true;
+					}else{
+						var _mo = moment(_y+'-'+_m+'-'+$(row).val());
+						if(_mo._isValid && _mo.isSameOrAfter(moment(_min)) && _mo.isSameOrBefore(moment(_max))){
+							_set = true;
+						}
+					}
+					if(_set){
+						if($(row).val() == _d){ $(row).prop('selected', true); };
+						_setopts.push($(row));
+					}
+				});
+				$jc('[data-spot="'+name+'"][data-kind=d]').html(_setopts);
+			}
+			if($jc(this).val() != ''){
+				var getlist = $jc('[data-spot="'+name+'"]');
+				for(g=0;g<getlist.length;g++){
+					now_g = getlist[g];
+					if($jc(now_g).val() == ''){
+						if(requ_flg){
+							setval = '';
+							break;
+						}else{
+							continue;
+						}
+					}else{
+						switch($jc(now_g).data('kind')){
+							case 'm':
+								
+							case 'd':
+								setval += '-';
+								setdate = setval + $jc(now_g).val();
+								break;
+							case 't':
+							case 'p':
+							case 'a':
+								setval += ' ';
+							case 'y':
+								break;
+						}
+						setval += $jc(now_g).val();
+					}
+				}
+				
+			}
+			$jc('input[name="'+name+'"]').val(setval).trigger('change');
+			if(setdate != ''){
+				$jc('input[data-name="'+name+'"]').val(setdate).trigger('change');
+			}
+		});
+		
+		$jc.datepicker.setDefaults({
+			buttonImage: "/jcjs/img/calendar.png",
+			buttonImageOnly: true,
+			showOn: "both",
+			onSelect: function(selectedDate){
+				var name = $jc(this).data('name');
+				if($jc(this).attr('type') == 'hidden'){
+					var ymd = new Date(selectedDate);
+					$jc('select[data-spot="'+name+'"][data-kind=d]').val('');
+					$jc('select[data-spot="'+name+'"][data-kind=m]').val('');
+					$jc('select[data-spot="'+name+'"][data-kind=y]').val(ymd.getFullYear()).trigger('blur');
+					$jc('select[data-spot="'+name+'"][data-kind=m]').val(('0'+(ymd.getMonth()+1)).slice(-2)).trigger('blur');
+					$jc('select[data-spot="'+name+'"][data-kind=d]').val(('0'+ymd.getDate()).slice(-2)).trigger('blur');
+				}
+				var setdate = selectedDate;
+				if($jc('input[name="'+name+'"]').hasClass('requ') || $jc('input[name="'+name+'"]').hasClass('requif')){
+					if( $jc('select[data-spot="'+name+'"][data-kind=t]').length == 1){ 
+						if($jc('select[data-spot="'+name+'"][data-kind=t]').val() != ''){
+							setdate += ' ' + $jc('select[data-spot="'+name+'"][data-kind=t]').val();
+						}else{
+							setdate = '';
+						}
+					}
+				}
+				$jc('input[name="'+name+'"]').val(setdate).trigger('blur');
+			},
+			beforeShow: function(input, inst){
+				if($jc(this).attr('type') == 'hidden'){
+					inst.dpDiv.css({marginTop: $jc(this).next().height()+'px'});
+				}else{
+					inst.dpDiv.css({marginTop: 0});
+				}
+			}
+		});
+
+		$jc('input.jcjs_datepicker').each(function(){
+			var options = {};
+			if($jc(this).data('s') != ''){
+				if($jc(this).data('s') == '0'){
+					options["minDate"] = '+0d';
+				}else{
+					options["minDate"] = $jc(this).data('s');
+				}
+			}
+			if($jc(this).data('e') != ''){
+				if($jc(this).data('e') == '0'){
+					options["maxDate"] = '+0d';
+				}else{
+					options["maxDate"] = $jc(this).data('e');
+				}
+			}
+			$jc(this).datepicker(options);
+		});
+	}
+	
+  var file = null; // 選択されるファイル
+
+  // ファイルが選択されたら
+  $jc('.jcjs_img_file').change(function() {
+
+    var hidden = $jc('input[name="'+$jc(this).data('name')+'"]');
+    
+    var div = $jc(this).next('div.jcjs_imgbox');
+    div.removeClass('show').removeClass('pshow');
+    var dummy = div.next();
+    
+    // ファイルを取得
+    file = $jc(this).prop('files')[0];
+    // 選択されたファイルが画像かどうか判定
+    if(file == undefined || (file.type != 'application/pdf' && file.type != 'image/jpeg' && file.type != 'image/png')) {
+      // 画像でない場合は終了
+      file = null;
+      hidden.val('').change();
+      $jc(this).val('');
+      return;
+    }
+
+    var reader = new FileReader();
+    div.removeClass('show').removeClass('pshow').css({height: 'auto', width:'auto'});
+    if(file.type == 'application/pdf'){
+      if(PDF_MAX_SIZE > 0 && file.size > (PDF_MAX_SIZE * 1000000)){
+        alert('ファイルサイズは、およそ'+PDF_MAX_SIZE+'Mまでです。');
+        hidden.val('').change();
+        $jc(this).val('');
+        return ;
+      }else{
+        dummy.html($(this).val().split('\\').pop());
+        reader.onload = function(e) {
+          hidden.val(e.target.result).change();
+          dummy.next().val(dummy.html().trim());
+        };
+      }
+    }else{
+      // 画像をリサイズする
+      var image = new Image();
+      reader.onload = function(e) {
+        image.onload = function() {
+          var width, height;
+          if(image.width <= THUMBNAIL_WIDTH && image.height <= THUMBNAIL_HEIGHT){
+            //サイズ内
+            width =image.width;
+            height = image.height;
+          }else if(image.width > image.height){
+            // 横長の画像は横のサイズを指定値にあわせる
+            var ratio = image.height/image.width;
+            width = THUMBNAIL_WIDTH;
+            height = THUMBNAIL_WIDTH * ratio;
+          } else {
+            // 縦長の画像は縦のサイズを指定値にあわせる
+            var ratio = image.width/image.height;
+            width = THUMBNAIL_HEIGHT * ratio;
+            height = THUMBNAIL_HEIGHT;
+          }
+          // サムネ描画用canvasのサイズを上で算出した値に変更
+          var canvas = div.find('canvas');
+          canvas.attr('width', width)
+                .attr('height', height);
+          var ctx = canvas[0].getContext('2d');
+          // canvasに既に描画されている画像をクリア
+          ctx.clearRect(0,0,width,height);
+          // canvasにサムネイルを描画
+          ctx.drawImage(image,0,0,image.width,image.height,0,0,width,height);
+
+          // canvasからbase64画像データを取得
+          var base64 = canvas.get(0).toDataURL('image/jpeg');
+
+          hidden.val(base64).change();
+          if(typeof fo == 'object' ){
+            fo.check(hidden[0].name);
+          }
+          var img = div.find('img');
+          img.attr('src', base64).css({'height': 'auto', 'width': 'auto'});
+        }
+        image.src = e.target.result;
+      };
+    }
+    reader.readAsDataURL(file);
+  });
+  $jc('.jcjs_imgbox button._del').click(function(){
+    var box = $jc(this).closest('.jcjs_imgbox');
+    $jc(box).removeClass('show').css({height: 'auto', width:'auto'});
+    $jc(box).find('img').attr('src', '');
+    $jc(box).prev('input[type=file]').val('');
+    $jc(box).find('input[type=hidden]').val('');
+    $jc(box).removeClass('pshow');
+    $jc(box).next('p.jcjs_dummy').html('');
+    
+    if(typeof fo == 'object' ){
+      fo.check($jc(this).closest('.jcjs_imgbox').find('input[type=hidden]')[0].name);
+    }
+  });
+});
+function cmsform_btn_change(wname, _r){
+	var _f = $jc('[name="'+wname+'"]').closest('form');
+	if(Object.values(fo._allret_req).indexOf(false) == -1 && Object.values(fo._allret_fom).indexOf(false) == -1){
+		$jc(_f).find('button[type=submit]').addClass('jcjs_btn_ok');
+	}else{
+		$jc(_f).find('button[type=submit]').removeClass('jcjs_btn_ok');
+	}
+}
+
+function jcjs_img_onload(obj){
+  var width, height;
+  width = obj.naturalWidth;
+  height = obj.naturalHeight;
+  $jc(obj).css({ height: height+'px', width : width+'px'});
+  if(height > wh_max || width > wh_max){
+    if(height > width){
+      $jc(obj).css({ height: wh_max+'px', width: 'auto' });
+    }else{
+      $jc(obj).css({ height: 'auto', width: wh_max+'px' });
+    }
+  }
+  $jc(obj).closest('.jcjs_imgbox').addClass('show');
+  $jc(obj).closest('.jcjs_imgbox').css({ height: $jc(obj).height(), width: $jc(obj).width() });
+}
+

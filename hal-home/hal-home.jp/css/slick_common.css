@@ -1,0 +1,261 @@
+@charset 'UTF-8';
+.slider {
+ padding: 20px 0 0;
+ opacity: 0;
+ transition: 3s;
+ position: relative;
+ top: 0px;
+ left: 0px;
+ outline: none;
+}
+.slick-slide {
+ outline: none
+}
+.slick-initialized {
+ opacity: 1;
+}
+.slider li {
+ margin: 0px 10px;
+ position: relative;
+}
+.main_slide_text {
+ position: absolute;
+ left: 0;
+ top: 15%;
+ background: rgba(0, 0, 0, 0.4);
+ border-right: 3px solid #f0693c;
+ padding: 20px 30px;
+}
+.main_text_ti {
+ display: inline-block;
+ font-weight: bold;
+ font-size: 40px;
+ line-height: 145%;
+ text-align: right;
+ color: #fff;
+ font-style: italic;
+ letter-spacing: -2px;
+ margin-left: 25px;
+}
+.letter_s {
+ letter-spacing: -25px !important;
+}
+.main_slide_text p {
+ color: #fff;
+ text-align: center;
+ font-size: 16px;
+ line-height: 180%;
+ letter-spacing: .05em;
+ margin: 15px 0 0;
+}
+.slider li img {
+ width: 100%;
+}
+.slider .prev {
+ width: 56px;
+ height: 57px;
+ position: absolute;
+ left: 8.5vw;
+ z-index: 50;
+ cursor: pointer;
+ transition-duration: 0.4s;
+ background: url(https://hal-home.jp/img/main_arrow_left.png);
+ top: 50%;
+ transform: translateY(-50%);
+ -webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+}
+.slider .prev:hover {
+ opacity: .8;
+}
+.slider .next {
+ width: 56px;
+ height: 57px;
+ position: absolute;
+ right: 8.5vw;
+ z-index: 50;
+ cursor: pointer;
+ transition-duration: 0.4s;
+ background: url(https://hal-home.jp/img/main_arrow_right.png);
+ top: 50%;
+ transform: translateY(-50%);
+ -webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+}
+.slider .next:hover {
+ opacity: .8;
+}
+.slick-active button {
+ color: #f0693c;
+}
+.slick-dots button {
+ background: none;
+ border: none;
+ content: "";
+ font-size: 0;
+ padding: 0;
+}
+.slick-dots li button:before {
+ font-family: 'slick';
+ font-size: 18px;
+ line-height: 20px;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 20px;
+ height: 20px;
+ /* 元のcontentプロパティの値だとfont-sizeを変更した際に位置がずれてしまうので値を変更 */
+ /* content: '•'; */
+ content: '\25CF';
+ text-align: center;
+ color: #dcd;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ cursor: pointer;
+}
+.slick-dots li.slick-active button:before {
+ color: #55514c;
+}
+.slick-dots {
+ overflow: hidden;
+ width: 100%;
+ /*ポイント*/
+ padding: 0;
+ margin: 0;
+ list-style: none;
+ text-align: center;
+ /*ポイント*/
+ margin-top: 15px;
+}
+.slick-dots li {
+ position: relative;
+ display: inline-block;
+ /*ポイント*/
+ margin: 0 5px;
+ max-width: 13px;
+ padding: 0;
+ width: 20px;
+ height: 20px;
+ border-radius: 100%;
+ cursor: pointer;
+}
+.blog_slide, .gh_slide {
+ position: relative;
+}
+.blog_slide .slick-dots {
+ margin: 30px auto 0;
+ display: block !important;
+}
+.gh_slide .slick-dots {
+ margin: 40px auto 0;
+ display: block !important;
+}
+.blog_slide .prev_a {
+ background: url(../img/arrow_l.png);
+ width: 50px;
+ height: 42px;
+ display: block;
+ position: absolute;
+ left: 198px;
+ bottom: -5px;
+ z-index: 50;
+ white-space: nowrap;
+ cursor: pointer;
+ transition-duration: 0.4s;
+}
+.blog_slide .prev_a:hover {
+ transition: .3s;
+ transform: translateX(-5px);
+}
+.blog_slide .next_a {
+ background: url(../img/arrow_r.png);
+ width: 50px;
+ height: 42px;
+ display: block;
+ position: absolute;
+ right: 190px;
+ bottom: -5px;
+ z-index: 50;
+ white-space: nowrap;
+ cursor: pointer;
+ transition-duration: 0.4s;
+}
+.blog_slide .next_a:hover {
+ transform: translateX(5px);
+ transition: .3s;
+}
+.gh_slide .prev_a {
+ background: url(../img/arrow_l.png);
+ width: 50px;
+ height: 42px;
+ display: block;
+ position: absolute;
+ left: -60px;
+ top: 160px;
+ z-index: 50;
+ white-space: nowrap;
+ cursor: pointer;
+ transition-duration: 0.4s;
+}
+.gh_slide .prev_a:hover {
+ transform: translateX(-5px);
+ transition: .3s;
+}
+.gh_slide .next_a {
+ background: url(../img/arrow_r.png);
+ width: 50px;
+ height: 42px;
+ display: block;
+ position: absolute;
+ right: -65px;
+ top: 160px;
+ z-index: 50;
+ white-space: nowrap;
+ cursor: pointer;
+ transition-duration: 0.4s;
+}
+.gh_slide .next_a:hover {
+ transform: translateX(5px);
+ transition: .3s;
+}
+.activities_blog_slide, .gh_slide {
+ position: relative;
+}
+.activities_blog_slide .slick-dots {
+ margin: 30px auto 0;
+ display: block !important;
+}
+.activities_blog_slide .prev_a {
+ background: url(../img/arrow_l.png);
+ width: 50px;
+ height: 42px;
+ display: block;
+ position: absolute;
+ left: -60px;
+ top: 130px;
+ z-index: 50;
+ white-space: nowrap;
+ cursor: pointer;
+ transition-duration: 0.4s;
+}
+.activities_blog_slide .prev_a:hover {
+ transition: .3s;
+ transform: translateX(-5px);
+}
+.activities_blog_slide .next_a {
+ background: url(../img/arrow_r.png);
+ width: 50px;
+ height: 42px;
+ display: block;
+ position: absolute;
+ right: -60px;
+ top: 130px;
+ z-index: 50;
+ white-space: nowrap;
+ cursor: pointer;
+ transition-duration: 0.4s;
+}
+.activities_blog_slide .next_a:hover {
+ transform: translateX(5px);
+ transition: .3s;
+}

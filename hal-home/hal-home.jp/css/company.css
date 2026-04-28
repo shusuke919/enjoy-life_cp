@@ -1,0 +1,1603 @@
+a[href^="tel:"] {
+ pointer-events: none;
+ color: #000;
+ text-decoration: none;
+}
+/* ----------------------------------------
+@company01
+---------------------------------------- */
+.co01_main_wrap {
+ width: 100%;
+ background: url(https://hal-home.jp/company/img/01/mainimg.jpg) no-repeat 50%;
+ background-size: cover;
+ height: 300px;
+}
+.co01_main_inner {
+ width: 1000px;
+ margin: 0 auto;
+ overflow: hidden;
+}
+.co01_mainsubtl {
+ font-size: 23px;
+ color: #fff;
+ margin: 100px 0 0 0;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+ font-weight: bold;
+ text-shadow: 0 0 5px #000;
+}
+span.co01_company {
+ font-size: 15px;
+ margin: 0 0 0 15px;
+}
+span.co01_maintxt {
+ font-size: 20px;
+ display: block;
+ line-height: 26px;
+ margin: 20px 0 0 0;
+ font-weight: normal;
+}
+h2.co01_miantl {
+ font-size: 23px;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+ font-weight: bold;
+ text-align: center;
+ line-height: 30px;
+ color: #0D316D;
+ padding: 40px 0;
+ width: 1000px;
+ margin: 0 auto;
+}
+h2.co01_tenpo_wrap {
+ width: 1000px;
+ margin: 0 auto;
+}
+p.co01_subtxt {
+ font-size: 15px;
+ text-align: center;
+ line-height: 24px;
+ width: 1000px;
+ margin: 0 auto;
+}
+.co01_anker_wrap {
+ width: 1000px;
+ margin: 0 auto;
+ overflow: hidden;
+ margin-top: 40px;
+}
+.co01_anker_wrap ul li a {
+ width: 20%;
+ padding: 16px;
+ color: #000;
+ display: block;
+ float: left;
+ background: #eee;
+ text-decoration: none;
+ margin: 0 2.4% 0 0;
+}
+.co01_anker_wrap ul li:last-child a {
+ margin: 0;
+}
+.co01_anker_wrap ul li a:hover {
+ background: #ccc;
+}
+.co01_anker_wrap ul li p {
+ margin: 10px 0 0 0;
+ font-size: 13px;
+}
+.co01_anker_wrap ul li:nth-child(5n) a {
+ margin: 0;
+}
+.co01_anker_wrap ul li span {
+ font-size: 18px;
+ font-weight: bold;
+ color: #03a864;
+ position: relative;
+ text-indent: 20px;
+ display: block;
+}
+.co01_anker_wrap ul li span:before {
+ display: block;
+ content: "";
+ position: absolute;
+ top: 45%;
+ left: 0;
+ width: 16px;
+ height: 16px;
+ margin-top: -8px;
+ border-radius: 50%;
+ background: #03a864;
+}
+.co01_anker_wrap ul li span:after {
+ display: block;
+ content: "";
+ position: absolute;
+ top: 45%;
+ left: 6px;
+ width: 0;
+ height: 0;
+ margin-top: -5px;
+ border: 5px solid transparent;
+ border-left: 5px solid #fff;
+}
+h2.co01_h2tl {
+ font-size: 23px;
+ font-weight: bold;
+ text-align: center;
+ padding: 20px 0;
+ border-bottom: solid 1px;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+ margin: 30px 0 20px 0;
+}
+h3.co01_pre_subtl {
+ font-size: 20px;
+ line-height: 32px;
+ font-weight: bold;
+}
+.co01_pre_wrap, .co01_info_wrap {
+ overflow: hidden;
+}
+.com_top {
+ text-align: center;
+ margin-top: 50px;
+}
+.co01_pre_l {
+ text-align: left;
+ display: block;
+ vertical-align: middle;
+ *display: inline;
+ *zoom: 1;
+ margin: 0 auto;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+}
+.co01_pre_b {
+ display: inline-block;
+ vertical-align: middle;
+ *display: inline;
+ *zoom: 1;
+ margin: 0 15px 0 0;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+}
+p.co01_pre_txt {
+ font-size: 14px;
+ font-weight: normal;
+ line-height: 28px;
+ letter-spacing: 0.5px;
+ margin-top: 10px;
+}
+.co01_pre_txt span {
+ font-size: 16px;
+ display: block;
+ line-height: 28px;
+ font-weight: 500;
+ margin-bottom: 10px;
+}
+.co01_pre_r {
+ display: inline-block;
+ vertical-align: middle;
+ *display: inline;
+ *zoom: 1;
+ margin: 20px 0 0 0;
+}
+.co01_pre_l img {
+ float: right;
+ display: block;
+ margin: 10px 0 0 0;
+}
+.co01_info_l {
+ width: 320px;
+ float: left;
+}
+.co01_info_l img {
+ margin: 0 0 20px 0;
+}
+.co01_info_r {
+ width: 645px;
+ float: right;
+}
+.co01_info_r table {
+ font-size: 15px;
+ border: solid 1px #CCCCCC;
+}
+.co01_info_r th {
+ padding: 10px 0;
+ background: #F8F8F8;
+ width: 130px;
+ font-size: 14px;
+ border-right: solid 1px #ccc;
+ font-weight: normal;
+ text-align: center;
+}
+.co01_info_r tr {
+ border-bottom: solid 1px #ccc;
+ border-collapse: collapse;
+ line-height: 30px;
+ width: 100%;
+ display: block;
+}
+.co01_info_r td {
+ font-size: 14px;
+ padding: 5px 0 5px 20px;
+ line-height: 22px;
+}
+.co01_info_r tr:nth-child(12n) {
+ border-collapse: collapse;
+ border: none;
+}
+p.co01_tenpo_txt {
+ font-size: 15px;
+ width: 1000px;
+ margin: 0 auto;
+ padding: 20px 0;
+ line-height: 24px;
+ text-align: center;
+}
+.co01_tenpo_photo {
+ text-align: center;
+ overflow: hidden;
+}
+.co01_tenpo_photo div {
+ display: inline-block;
+ *display: inline;
+ *zoom: 1;
+ vertical-align: top;
+ width: 470px;
+ margin: 0 10px 25px 10px;
+}
+iframe.pano_view {
+ height: 500px;
+}
+.pano_link a {
+ font-size: 18px;
+ text-align: center;
+ display: block;
+ line-height: 40px;
+ margin-top: 15px;
+ background: #0D3270;
+ color: #fff;
+ font-weight: bold;
+}
+/* ----------------------------------------
+@company01_side
+---------------------------------------- */
+.co01s_main_wrap {
+ width: 100%;
+ background: url(https://hal-home.jp/company/img/01/mainimg.jpg) no-repeat 50%;
+ background-size: cover;
+ height: 300px;
+}
+.co01s_main_inner {
+ width: 100%;
+ margin: 0 auto;
+ overflow: hidden;
+}
+.co01s_mainsubtl {
+ font-size: 23px;
+ color: #fff;
+ margin: 100px 0 0 0;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+ font-weight: bold;
+ text-shadow: 0 0 5px #000;
+ text-align: center;
+}
+span.co01s_company {
+ font-size: 15px;
+ margin: 0 0 0 15px;
+}
+span.co01s_maintxt {
+ font-size: 20px;
+ display: block;
+ line-height: 26px;
+ margin: 20px 0 0 0;
+ font-weight: normal;
+ padding: 0 20px;
+}
+h2.co01s_miantl {
+ font-size: 23px;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+ font-weight: bold;
+ text-align: center;
+ line-height: 30px;
+ color: #0D316D;
+ padding: 40px 0;
+ width: 100%;
+ margin: 0 auto;
+}
+h2.co01s_tenpo_wrap {
+ width: 100%;
+ margin: 0 auto !important;
+}
+p.co01s_subtxt {
+ font-size: 15px;
+ text-align: center;
+ line-height: 22px;
+ width: 100%;
+ margin: 0 auto;
+}
+.co01s_anker_wrap {
+ width: 100%;
+ margin: 0 auto;
+ overflow: hidden;
+ margin-top: 40px;
+ text-align: center;
+}
+.co01s_anker_wrap ul li a {
+ width: 150px;
+ padding: 15px;
+ color: #000;
+ display: block;
+ float: left;
+ background: #eee;
+ text-decoration: none;
+ margin: 0 20px 0 0;
+}
+.co01s_anker_wrap ul li:last-child a {
+ margin: 0;
+}
+.co01s_anker_wrap ul li a:hover {
+ background: #ccc;
+}
+.co01s_anker_wrap ul li p {
+ margin: 10px 0 0 0;
+ font-size: 12px;
+}
+.co01s_anker_wrap ul li:nth-child(5n) a {
+ margin: 0;
+}
+.co01s_anker_wrap ul li span {
+ font-size: 16px;
+ font-weight: bold;
+ color: #0D3270;
+ position: relative;
+ text-indent: 15px;
+ display: block;
+}
+.co01s_anker_wrap ul li span:before {
+ display: block;
+ content: "";
+ position: absolute;
+ top: 45%;
+ left: 0;
+ width: 16px;
+ height: 16px;
+ margin-top: -8px;
+ border-radius: 50%;
+ background: #0D3270;
+}
+.co01s_anker_wrap ul li span:after {
+ display: block;
+ content: "";
+ position: absolute;
+ top: 45%;
+ left: 6px;
+ width: 0;
+ height: 0;
+ margin-top: -5px;
+ border: 5px solid transparent;
+ border-left: 5px solid #fff;
+}
+h2.co01s_h2tl {
+ font-size: 23px;
+ font-weight: bold;
+ text-align: center;
+ padding: 20px 0;
+ border-bottom: solid 1px;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+ margin: 30px 0;
+}
+h3.co01s_pre_subtl {
+ font-size: 20px;
+ font-weight: bold;
+}
+.co01s_pre_wrap, .co01s_info_wrap {
+ overflow: hidden;
+}
+.co01s_pre_l {
+ float: left;
+ width: 510px;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+}
+p.co01s_pre_txt {
+ font-size: 14px;
+ font-weight: bold;
+ line-height: 23px;
+}
+.co01s_pre_r {
+ width: 250px;
+ float: right;
+}
+.co01s_pre_l img {
+ display: block;
+ margin: 10px 0 0 0;
+}
+.co01s_info_l {
+ margin-bottom: 20px;
+ text-align: center;
+}
+.co01s_info_l img {
+ display: inline-block;
+ *display: inline;
+ *zoom: 1;
+ vertical-align: top;
+ margin: 0 10px;
+ width: 360px;
+}
+.co01s_info_r {}
+.co01s_info_r table {
+ border: solid 1px #CCCCCC;
+ border-collapse: collapse;
+}
+.co01s_info_r th {
+ padding: 10px 0;
+ background: #F8F8F8;
+ width: 130px;
+ font-size: 14px;
+ border-right: solid 1px #ccc;
+ font-weight: normal;
+ text-align: center;
+}
+.co01s_info_r tr {
+ border-bottom: solid 1px #ccc;
+ line-height: 30px;
+ width: 100%;
+}
+.co01s_info_r td {
+ font-size: 14px;
+ padding: 5px 0 5px 20px;
+ line-height: 22px;
+}
+.co01s_info_r tr:nth-child(12n) {
+ border-collapse: collapse;
+ border: none;
+}
+p.co01s_tenpo_txt {
+ font-size: 15px;
+ width: 100%;
+ margin: 0 auto;
+ padding: 20px 0;
+ line-height: 24px;
+ text-align: center;
+}
+.co01s_tenpo_photo {
+ text-align: center;
+ overflow: hidden;
+}
+.co01s_tenpo_photo div {
+ display: inline-block;
+ *display: inline;
+ *zoom: 1;
+ vertical-align: top;
+ width: 360px;
+ margin: 0 10px 25px 10px;
+}
+/* ----------------------------------------
+@company02
+---------------------------------------- */
+.co02_wrap {
+ font-size: 14px;
+ line-height: 22px;
+ text-align: left;
+ margin-bottom: 40px;
+ width: 1000px;
+ margin: 0 auto;
+}
+.co03_sh_basic p {
+ font-size: 14px !important;
+ line-height: 28px !important;
+}
+.co02_wrap>div {
+ overflow: hidden;
+}
+.co02_nav {
+ width: 1000px;
+ margin: 20px auto 0;
+}
+.co02_nav ul {
+ display: -webkit-flex;
+ display: flex;
+ -webkit-justify-content: flex-start;
+ justify-content: flex-start;
+ border: 1px solid #999;
+}
+.co02_nav li {
+ -webkit-flex-grow: 1;
+ flex-grow: 1;
+ border-right: 1px solid #999;
+}
+.co02_nav li:last-child {
+ border-right: none;
+}
+.co02_nav li a {
+ display: block;
+ padding: 10px 0;
+ color: #333;
+ text-decoration: none;
+ background: #fff;
+ font-weight: bold;
+ letter-spacing: 1px;
+ font-size: 14px;
+ text-align: center;
+}
+.co02_nav li a:hover {
+ background: #eee;
+}
+.co02_tl {
+ width: 100%;
+ border-top: 1px solid #999;
+ border-bottom: 1px solid #999;
+ padding: 40px 0;
+ letter-spacing: 1px;
+ margin: 40px auto;
+ text-align: center;
+}
+.co02_tl b {
+ display: block;
+ font-size: 24px;
+ line-height: 32px;
+ margin-bottom: 10px;
+ font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "ŸàƒSƒVƒbƒN", "Yu Gothic", "ŸàƒSƒVƒbƒN‘Ì", "YuGothic", "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "ƒƒCƒŠƒI", Meiryo, "‚l‚r ‚oƒSƒVƒbƒN", "MS PGothic", sans-serif;
+}
+.co02_tl span {
+ display: block;
+ font-family: 'Century Gothic', 'Arial';
+}
+.co02_article {
+ width: 1000px;
+ margin: 0 auto;
+}
+.co02_pagetop {
+ width: 1000px;
+ margin: 0 auto;
+ padding-top: 40px;
+ overflow: hidden;
+}
+.co02_pagetop a {
+ float: right;
+ color: #333;
+ text-decoration: none;
+ font-weight: bold;
+ border: 1px solid #333;
+ padding: 10px 20px;
+}
+.co02_pagetop a:hover {
+ color: #999;
+ border: 1px solid #999;
+}
+/* ‘ã•\ƒƒbƒZ[ƒW co02_message
+---------------------------------------- */
+.co02_message {
+ overflow: hidden;
+}
+.co02_me_photo {
+ float: left;
+ width: 330px;
+ margin-right: 30px;
+}
+.co02_me_photo img {
+ margin-right: 40px;
+ width: 330px;
+}
+.co02_me_txt {}
+.co02_me_txt b {
+ display: block;
+ font-size: 24px;
+ line-height: 34px;
+ padding: 60px 0;
+ font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "ŸàƒSƒVƒbƒN", "Yu Gothic", "ŸàƒSƒVƒbƒN‘Ì", "YuGothic", "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "ƒƒCƒŠƒI", Meiryo, "‚l‚r ‚oƒSƒVƒbƒN", "MS PGothic", sans-serif;
+}
+.co02_me_txt span {
+ display: block;
+ text-align: right;
+ font-weight: bold;
+ padding-top: 20px;
+ letter-spacing: 1px;
+}
+/* ‰ïŽÐŠT—v co02_profile
+---------------------------------------- */
+.co02_profile {}
+.co02_profile table {
+ border-collapse: collapse;
+ width: 100%;
+}
+.co02_profile tr:nth-child(2n-1) {
+ background: #fff;
+}
+.co02_profile th, .co02_profile td {
+ padding: 20px;
+ font-size: 14px;
+ line-height: 1.6rem;
+}
+.co02_profile th {
+ width: 180px;
+}
+.co02_profile td a {
+ color: #333;
+}
+.co02_profile td a:hover {
+ color: #999;
+}
+/* “X•ÜŽÊ^ co02_shop
+---------------------------------------- */
+.co02_shop {}
+.co02_shop ul {
+ overflow: hidden;
+ text-align: center;
+}
+.co02_shop li {
+ display: inline-block;
+ *display: inline;
+ *zoom: 1;
+ vertical-align: top;
+ margin: 40px 20px 0;
+ width: 450px;
+}
+.co02_shop li:nth-child(1),
+.co02_shop li:nth-child(2) {
+ margin-top: 0;
+}
+.co02_shop img {
+ vertical-align: bottom;
+}
+/* ƒAƒNƒZƒXƒ}ƒbƒv co02_access
+---------------------------------------- */
+.co02_access {}
+.co02_access_txt {
+ overflow: hidden;
+ margin-bottom: 20px;
+}
+.co02_access_txt p,
+.co02_access_txt a {
+ display: inline-block;
+ *display: inline;
+ *zoom: 1;
+ vertical-align: middle;
+}
+.co02_access_txt p {
+ width: 743px;
+}
+.co02_access_txt span {
+ padding-right: 20px;
+}
+.co02_access_txt a {
+ background: url(https://hal-home.jp/company/img/icon_pin.png) no-repeat 10px 50%;
+ width: 250px;
+ border: 1px solid #999;
+ height: 50px;
+ line-height: 48px;
+ text-align: center;
+ text-decoration: none;
+ background-color: #fff;
+ color: #333;
+ font-weight: bold;
+ letter-spacing: 1px;
+}
+.co02_access_txt a:hover {
+ background-color: #eee;
+ color: #333;
+}
+.co02_access iframe {
+ width: 100%;
+ height: 600px;
+}
+/* ----------------------------------------
+@company02
+---------------------------------------- */
+.co02s_wrap {
+ margin-bottom: 40px;
+ font-size: 14px;
+ line-height: 1.5rem;
+}
+.co02s_wrap>div {
+ overflow: hidden;
+}
+.co02s_nav {
+ width: 100%;
+ margin: 20px auto 0;
+}
+.co02s_nav ul {
+ display: -webkit-flex;
+ display: flex;
+ -webkit-justify-content: flex-start;
+ justify-content: flex-start;
+ border: 1px solid #999;
+}
+.co02s_nav li {
+ -webkit-flex-grow: 1;
+ flex-grow: 1;
+ border-right: 1px solid #999;
+}
+.co02s_nav li:last-child {
+ border-right: none;
+}
+.co02s_nav li a {
+ display: block;
+ padding: 10px 0;
+ color: #333;
+ text-decoration: none;
+ background: #f5f5f5;
+ font-weight: bold;
+ letter-spacing: 1px;
+ font-size: 14px;
+ text-align: center;
+}
+.co02s_nav li a:hover {
+ background: #fff;
+}
+.co02s_tl {
+ width: 100%;
+ border-top: 1px solid #999;
+ border-bottom: 1px solid #999;
+ padding: 30px 0;
+ letter-spacing: 1px;
+ margin: 30px auto;
+ text-align: center;
+}
+.co02s_tl b {
+ display: block;
+ font-size: 24px;
+ line-height: 32px;
+ margin-bottom: 10px;
+ font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "ŸàƒSƒVƒbƒN", "Yu Gothic", "ŸàƒSƒVƒbƒN‘Ì", "YuGothic", "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "ƒƒCƒŠƒI", Meiryo, "‚l‚r ‚oƒSƒVƒbƒN", "MS PGothic", sans-serif;
+}
+.co02s_tl span {
+ display: block;
+ font-family: 'Century Gothic', 'Arial';
+}
+.co02s_article {
+ width: 100%;
+ margin: 0 auto;
+}
+.co02s_pagetop {
+ width: 100%;
+ margin: 0 auto;
+ padding-top: 40px;
+ overflow: hidden;
+}
+.co02s_pagetop a {
+ float: right;
+ color: #333;
+ text-decoration: none;
+ font-weight: bold;
+ border: 1px solid #333;
+ padding: 10px 20px;
+}
+.co02s_pagetop a:hover {
+ color: #999;
+ border: 1px solid #999;
+}
+/* ‘ã•\ƒƒbƒZ[ƒW co02s_message
+---------------------------------------- */
+.co02s_message {
+ overflow: hidden;
+}
+.co02s_me_photo {
+ float: left;
+}
+.co02s_me_photo img {
+ margin-right: 40px;
+}
+.co02s_me_txt {}
+.co02s_me_txt b {
+ display: block;
+ font-size: 22px;
+ line-height: 32px;
+ padding: 60px 0;
+ font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "ŸàƒSƒVƒbƒN", "Yu Gothic", "ŸàƒSƒVƒbƒN‘Ì", "YuGothic", "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "ƒƒCƒŠƒI", Meiryo, "‚l‚r ‚oƒSƒVƒbƒN", "MS PGothic", sans-serif;
+}
+.co02s_me_txt span {
+ display: block;
+ text-align: right;
+ font-weight: bold;
+ padding-top: 20px;
+ letter-spacing: 1px;
+}
+/* ‰ïŽÐŠT—v co02s_profile
+---------------------------------------- */
+.co02s_profile {}
+.co02s_profile table {
+ border-collapse: collapse;
+ width: 100%;
+}
+.co02s_profile tr:nth-child(2n-1) {
+ background: #f5f5f5;
+}
+.co02s_profile th, .co02s_profile td {
+ padding: 20px;
+ font-size: 14px;
+ line-height: 1.6rem;
+}
+.co02s_profile th {
+ width: 140px;
+}
+.co02s_profile td a {
+ color: #333;
+}
+.co02s_profile td a:hover {
+ color: #999;
+}
+/* “X•ÜŽÊ^ co02s_shop
+---------------------------------------- */
+.co02s_shop {}
+.co02s_shop ul {
+ overflow: hidden;
+ text-align: center;
+}
+.co02s_shop li {
+ display: inline-block;
+ *display: inline;
+ *zoom: 1;
+ vertical-align: top;
+ margin: 20px 8px 0;
+ width: 365px;
+}
+.co02s_shop li:nth-child(1),
+.co02s_shop li:nth-child(2) {
+ margin-top: 0;
+}
+.co02s_shop img {
+ vertical-align: bottom;
+}
+/* ƒAƒNƒZƒXƒ}ƒbƒv co02s_access
+---------------------------------------- */
+.co02s_access {}
+.co02s_access_txt {
+ overflow: hidden;
+ margin-bottom: 20px;
+}
+.co02s_access_txt p,
+.co02s_access_txt a {
+ display: inline-block;
+ *display: inline;
+ *zoom: 1;
+ vertical-align: middle;
+}
+.co02s_access_txt p {
+ width: 563px;
+}
+.co02s_access_txt span {
+ padding-right: 20px;
+ display: block;
+}
+.co02s_access_txt a {
+ background: url(https://hal-home.jp/company/img/icon_pin.png) no-repeat 10px 50%;
+ width: 210px;
+ border: 1px solid #999;
+ height: 50px;
+ line-height: 48px;
+ text-align: center;
+ text-decoration: none;
+ background-color: #f5f5f5;
+ color: #333;
+ font-weight: bold;
+ letter-spacing: 1px;
+}
+.co02s_access_txt a:hover {
+ background-color: #FFF;
+ color: #333;
+}
+.co02s_access iframe {
+ width: 100%;
+ height: 600px;
+ vertical-align: bottom;
+}
+/* ----------------------------------------
+@company03
+---------------------------------------- */
+.co03_office {
+ overflow: hidden;
+ margin-bottom: 40px;
+ font-size: 13px;
+ line-height: 1.4rem;
+}
+.co03_of_photo {
+ float: left;
+ width: 500px;
+ margin-bottom: 20px;
+}
+.co03_of_detail {
+ float: right;
+ width: 480px;
+ margin-bottom: 20px;
+}
+.co03_of_detail table {
+ border-top: 1px solid #ccc;
+ border-collapse: collapse;
+ width: 100%;
+}
+.co03_of_detail th,
+.co03_of_detail td {
+ border-bottom: 1px solid #ccc;
+ padding: 12px;
+ font-size: 13px;
+ line-height: 1.4rem;
+}
+.co03_of_detail th {
+ width: 70px;
+}
+.co03_of_detail td {}
+.co03_of_comment {
+ background: #f5f5f5;
+ padding: 14px;
+ border: 1px dashed #ccc;
+ clear: both;
+}
+.co03_shop {
+ font-size: 13px;
+ line-height: 1.4rem;
+}
+.co03_shop h3 {
+ padding: 15px;
+ margin: 0 0 20px 0;
+ border-top: 1px solid #ccc;
+ border-bottom: 1px solid #ccc;
+}
+.co03_sh_basic {
+ overflow: hidden;
+}
+.co03_sh_txt {
+ float: left;
+ width: 500px;
+ margin-bottom: 20px;
+}
+.co03_sh_txt span {
+ display: block;
+ background: #f5f5f5;
+ padding: 14px;
+ border: 1px dashed #ccc;
+ margin-bottom: 10px;
+}
+.co03_sh_txt p {}
+.co03_sh_ba_photo {
+ float: right;
+ width: 480px;
+ margin-bottom: 20px;
+}
+.co03_sh_photo {
+ clear: both;
+}
+.co03_sh_photo ul {
+ overflow: hidden;
+}
+.co03_sh_photo li {
+ float: left;
+ padding-bottom: 20px;
+ margin-right: 20px;
+ width: 320px;
+}
+.co03_sh_photo li:nth-child(3n) {
+ margin-right: 0;
+}
+.co03_sh_photo img {}
+.co03_sh_map {
+ font-size: 13px;
+ line-height: 1.4rem;
+}
+.co03_sh_map p {
+ text-align: center;
+ margin-bottom: 10px;
+}
+.co03_sh_map>iframe {
+ width: 100%;
+ height: 400px;
+ vertical-align: bottom;
+ margin-bottom: 10px;
+}
+.co03_sh_map a {
+ display: block;
+ width: 300px;
+ margin: 0 auto;
+ text-align: center;
+ border: 3px solid #ddd;
+ padding: 10px 0;
+ color: #333;
+ text-decoration: none;
+ font-weight: bold;
+}
+.co03_sh_map a:hover {
+ background: #ddd;
+ border: 3px solid #ddd;
+}
+/* ----------------------------------------
+@company03
+---------------------------------------- */
+.co03s_office {
+ overflow: hidden;
+ margin-bottom: 40px;
+ font-size: 13px;
+ line-height: 1.4rem;
+}
+.co03s_of_photo {
+ float: left;
+ width: 320px;
+ margin-bottom: 20px;
+}
+.co03s_of_detail {
+ float: right;
+ width: 440px;
+ margin-bottom: 20px;
+}
+.co03s_of_detail table {
+ border-top: 1px solid #ccc;
+ border-collapse: collapse;
+ width: 100%;
+}
+.co03s_of_detail th,
+.co03s_of_detail td {
+ border-bottom: 1px solid #ccc;
+ padding: 9px;
+ font-size: 13px;
+ line-height: 1.4rem;
+}
+.co03s_of_detail th {
+ width: 70px;
+}
+.co03s_of_detail td {}
+.co03s_of_comment {
+ background: #f5f5f5;
+ padding: 14px;
+ border: 1px dashed #ccc;
+ clear: both;
+}
+.co03s_shop {
+ font-size: 13px;
+ line-height: 1.4rem;
+}
+.co03s_shop h3 {
+ padding: 15px;
+ margin: 0 0 20px 0;
+ border-top: 1px solid #ccc;
+ border-bottom: 1px solid #ccc;
+}
+.co03s_sh_basic {
+ overflow: hidden;
+}
+.co03s_sh_txt {
+ float: left;
+ width: 380px;
+ margin-bottom: 20px;
+}
+.co03s_sh_txt span {
+ display: block;
+ background: #f5f5f5;
+ padding: 14px;
+ border: 1px dashed #ccc;
+ margin-bottom: 10px;
+}
+.co03s_sh_txt p {}
+.co03s_sh_ba_photo {
+ float: right;
+ width: 380px;
+ margin-bottom: 20px;
+}
+.co03s_sh_photo {
+ clear: both;
+}
+.co03s_sh_photo ul {
+ overflow: hidden;
+}
+.co03s_sh_photo li {
+ float: left;
+ padding-bottom: 15px;
+ margin-right: 15px;
+ width: 250px;
+}
+.co03s_sh_photo li:nth-child(3n) {
+ margin-right: 0;
+}
+.co03s_sh_photo img {}
+.co03s_sh_map {
+ font-size: 13px;
+ line-height: 1.4rem;
+}
+.co03s_sh_map p {
+ text-align: center;
+ margin-bottom: 10px;
+}
+.co03s_sh_map>iframe {
+ width: 100%;
+ height: 400px;
+ vertical-align: bottom;
+ margin-bottom: 10px;
+}
+.co03s_sh_map a {
+ display: block;
+ width: 300px;
+ margin: 0 auto;
+ text-align: center;
+ border: 3px solid #ddd;
+ padding: 10px 0;
+ color: #333;
+ text-decoration: none;
+ font-weight: bold;
+}
+.co03s_sh_map a:hover {
+ background: #ddd;
+ border: 3px solid #ddd;
+}
+/* ----------------------------------------
+company04
+---------------------------------------- */
+.comp_inner {
+ width: 1100px;
+ margin: 0 auto;
+}
+.comp_main {
+ background: url(https://hal-home.jp/company/img/04/main_bg.jpg)no-repeat 50% 50%;
+ background-size: cover;
+ height: 450px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.comp_main p {
+ font-size: 29px;
+ text-align: center;
+ color: #9a8451;
+ margin: 0px 0 0 0;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+ font-weight: bold;
+ text-shadow: 0 0 5px #fff;
+}
+.comp_main p span {
+ display: block;
+ font-size: 23px;
+ color: #333;
+ margin: 32px 0 0 0;
+ text-align: center;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+ font-weight: bold;
+ text-shadow: 0 0 5px #fff;
+}
+.comp_inner {
+ width: 1100px;
+ margin: 0 auto;
+}
+.comp_reason h2 {
+ background: url(https://hal-home.jp/company/img/04/reason_tl.png);
+ background-repeat: no-repeat;
+ width: 555px;
+ margin: 0px auto 40px auto;
+ padding: 17px 0px;
+ font-size: 24px;
+ line-height: 50px;
+ color: #9a8451;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+}
+.comp_div ul {
+ margin-top: 30px;
+ display: flex;
+ justify-content: space-between;
+}
+.comp_div ul li {
+ width: 260px;
+ margin: 0px 20px 0px 0px;
+ float: left;
+}
+.comp_div ul li a {
+ display: block;
+ overflow: hidden;
+ padding: 15px;
+ border: solid 1px #9a8451;
+ position: relative;
+}
+.comp_div ul li a:hover {
+ border: solid 1px #ba1615;
+ background-color: #eeeeee;
+}
+.comp_div ul li a::before {
+ content: "";
+ bottom: 14px;
+ right: 13px;
+ width: 13px;
+ height: 1px;
+ background: #ba1615;
+ position: absolute;
+}
+.comp_div ul li a::after {
+ content: "";
+ right: 12px;
+ bottom: 14px;
+ width: 10px;
+ height: 4px;
+ border-top: 1px solid #ba1615;
+ -webkit-transform: rotate(45deg);
+ transform: rotate(45deg);
+ position: absolute;
+}
+.comp_div ul li:nth-child(4) {
+ margin-right: 0px;
+}
+.comp_inner_list_img {
+ width: 41%;
+ float: left;
+}
+.comp_inner_list_img img {}
+.comp_inner_list_tex {
+ float: right;
+ width: 54%;
+ color: #333;
+ font-weight: bold;
+ font-size: 16px;
+ margin: 21px 0px 0px 0px;
+}
+.comp_inner_list_tex span {
+ color: #ababab;
+ font-weight: normal;
+ font-size: 13px;
+ margin: 2px 0px 0px 0px;
+ display: block;
+}
+.comp_reason {
+ padding: 80px 0;
+}
+.reason_tl {
+ text-align: center;
+ margin-bottom: 30px;
+}
+.comp_reason ul {
+ display: flex;
+ justify-content: space-between;
+}
+.comp_reason ul li {
+ border: 1px solid #bfac7f;
+ box-sizing: border-box;
+ width: 320px;
+ text-align: center;
+}
+.reason_row_tl p {
+ font-family: "ƒqƒ‰ƒMƒmŠpƒS Pro", "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", "MS PGothic", sans-serif;
+ background: #f4f5f5;
+ color: #bfac7f;
+ font-size: 24px;
+ font-weight: bold;
+ padding: 20px 0;
+}
+.comp_reason li img {
+ margin: 20px 0;
+ width: 240px;
+}
+.comp_reason li>p {
+ font-family: "ƒqƒ‰ƒMƒmŠpƒS Pro", "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", "MS PGothic", sans-serif;
+ font-size: 14px;
+ font-weight: bold;
+ text-align: left;
+ padding: 0px 21px 20px;
+}
+.comp_message {
+ margin-top: 60px;
+ padding: 80px 0;
+ background-color: #f4f5f5;
+ background-image: url(https://hal-home.jp/company/img/04/message_bg.png);
+ background-repeat: no-repeat;
+ background-position: 80% 103%;
+ text-align: center;
+}
+.comp_tl {
+ font-size: 23px;
+ margin: 0px 0px 40px 0px;
+ text-align: center;
+ font-weight: normal;
+ color: #9a8451;
+}
+.comp_tl span {
+ color: #b20000;
+ display: block;
+ font-size: 12px;
+ font-weight: normal;
+ margin: 10px 0px 0px 0px;
+}
+.comp_img {
+ width: 310px;
+ height: 310px;
+ float: left;
+}
+.comp_me_txt {
+ float: right;
+ font-size: 16px;
+ font-weight: bold;
+ line-height: 30px;
+ margin-bottom: 40px;
+ text-align: left;
+ width: 760px;
+}
+.comp_me_name {
+ letter-spacing: 1px;
+ font-size: 14px;
+ clear: both;
+}
+.comp_me_name span {
+ font-family: "¬’Ë–¾’© Pro";
+ font-size: 24px;
+ font-weight: bold;
+ letter-spacing: 0px;
+ margin-left: 10px;
+ color: #333;
+}
+.comp_shopinfo {
+ padding: 80px 0;
+ text-align: center;
+}
+.comp_shopinfo ul {
+ overflow: hidden;
+}
+.comp_shopinfo ul li {
+ float: left;
+ width: 353px;
+ margin-right: 20px;
+ margin-bottom: 30px;
+}
+.comp_shopinfo ul li:nth-child(3n) {
+ margin-right: 0;
+}
+.comp_shopinfo ul li:nth-child(n+4) {
+ margin-bottom: 0;
+}
+.comp_img_wrap img {
+ width: 100%;
+}
+.comp_shopinfo ul li p {
+ font-size: 14px;
+ margin-top: 10px;
+ display: flex;
+ align-items: center;
+}
+.comp_shopinfo ul li p:before {
+ content: "";
+ flex-grow: 0.2;
+ height: 1px;
+ background: #b20000;
+ display: block;
+ margin-right: 10px;
+}
+.comp_channel {
+ padding: 80px;
+ background-color: #b20000;
+ text-align: center;
+}
+.comp_channel .comp_tl {
+ color: #FFF;
+ margin-bottom: 15px;
+}
+.comp_channel .comp_tl span {
+ color: #FFF;
+}
+.comp_ch_subtl {
+ margin-bottom: 15px;
+}
+.comp_ch_main {
+ position: relative;
+}
+.comp_ch_main video {
+ width: 100%;
+ height: auto;
+}
+.comp_ch_bnr {
+ position: absolute;
+ bottom: 20px;
+ right: 15px;
+}
+.comp_company {
+ padding: 80px 0;
+}
+.comp_map .comp_inner {
+ width: 880px;
+ background: #d7ceb9;
+ padding: 80px 60px;
+ overflow: hidden;
+}
+.comp_map_txt {
+ /*    float: left;*/
+}
+.comp_map_txt span {
+ color: #333;
+ display: block;
+ font-size: 16px;
+ font-weight: bold;
+}
+.comp_map_txt p {
+ color: #333;
+ font-size: 16px;
+ margin-bottom: 10px;
+ line-height: 24px;
+}
+.comp_map_map {
+ /*    float: right;*/
+ text-align: center;
+}
+.comp_map_map a {
+ padding: 15px 0;
+ margin-top: 20px !important;
+ border: 1px solid #999;
+ text-align: center;
+ text-decoration: none;
+ background-color: #f5f5f5;
+ color: #333;
+ font-weight: bold;
+ letter-spacing: 1px;
+ display: inline-block;
+ width: 250px;
+}
+.comp_map iframe {
+ display: block;
+ width: 850px;
+ height: 400px;
+}
+.comp_history {
+ margin-top: 50px;
+ padding: 80px 0;
+ background: url(https://hal-home.jp/company/img/04/history_bg.jpg)50% 50%;
+ background-size: cover;
+}
+.comp_history .comp_inner {
+ background: rgba(255, 255, 255, 0.8);
+ padding: 80px 160px;
+ width: 680px;
+}
+.comp_history h2 {
+ line-height: 52px;
+ position: relative;
+ /* height: 52px; */
+ margin: 0px auto 20px auto;
+ width: 190px;
+ padding: 0 0;
+ text-align: center;
+ color: #fff;
+}
+.comp_history h2:before,
+.comp_history h2:after {
+ position: absolute;
+ top: 0;
+ display: block;
+ height: 0px;
+ content: '';
+ border: 26px solid #b20000;
+}
+.comp_history h2:before {
+ left: -40px;
+ border-left-width: 15px;
+ border-left-color: transparent;
+}
+.comp_history h2:after {
+ right: -40px;
+ border-right-width: 15px;
+ border-right-color: transparent;
+}
+.comp_history h2 span {
+ position: relative;
+ display: block;
+ background: #b20000;
+}
+.comp_history h2 span:nth-child(2) {
+ position: relative;
+ display: block;
+ background: none;
+ font-size: 12px;
+ font-weight: normal;
+ color: #b20000;
+}
+.comp_history ul li {
+ margin-bottom: 15px;
+}
+.comp_history ul li span {
+ font-weight: bold;
+ color: #b20000;
+}
+.comp_history ul li p {
+ display: inline-block;
+ margin-left: 30px;
+}
+.com_movie {
+ width: 1000px;
+ margin: 50px auto;
+ display: flex;
+ justify-content: space-between;
+}
+.com_interview a {
+ display: block;
+ width: 480px;
+ height: 250px;
+ box-shadow: 0px 3px 5px #aaa;
+}
+.com_interview a:hover {
+ box-shadow: none;
+ transform: translateY(3px);
+ opacity: .8;
+ transition: .3s;
+}
+.com_interview img {
+ width: 480px;
+ height: 250px !important;
+ object-fit: cover;
+}
+.com_movie_text {
+ margin-top: 20px;
+ width: 478px;
+}
+.com_movie_text h3 {
+ line-height: 28px;
+ margin: 0 0 15px;
+ font-size: 20px;
+ font-weight: bold;
+ padding: 0px 0 15px;
+ border-bottom: solid 1px;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+}
+.com_movie p {
+ font-size: 16px;
+ line-height: 28px;
+}
+.com_introduction h3 {
+ border-left: 5px solid #03a864;
+ line-height: 28px;
+ margin: 0 0 15px;
+ color: #03a864;
+ font-size: 20px;
+ font-weight: bold;
+ padding-left: 10px;
+ font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3", "Hiragino Mincho Pro", Meiryo, "MS Mincho", "‚l‚r –¾’©";
+}
+.com_introduction p {
+ font-size: 16px;
+ line-height: 28px;
+}
+.com_introduction ul li {
+ margin-bottom: 40px;
+}
+.com_introduction ul li:nth-child(4) a {
+ display: block;
+ width: 280px;
+ margin-top: 10px;
+}
+.com_introduction ul li a:hover {
+ opacity: .8;
+}
+.company_result {
+ font-size: 14px;
+ line-height: 24px !important;
+}
+.company_result>ul {
+ display: flex;
+ justify-content: space-between;
+}
+.company_result>ul>li {
+ width: 490px;
+}
+.company_result>ul>li {
+ border: solid 2px #333;
+ margin: 0px;
+ padding: 20px;
+ box-sizing: border-box;
+ border-radius: 10px;
+}
+.company_result>ul>li ul {
+ float: left;
+ margin-right: 14px;
+}
+.company_result>ul>li h3 {
+ font-size: 24px;
+ line-height: 28px;
+ text-align: center;
+ margin: 0px 0px 10px;
+ padding: 0px 0px 10px;
+ border-bottom: solid 1px #CCC;
+}
+.company_result>ul>li div {
+ margin-bottom: 10px;
+}
+.company_result>ul>li span {
+ color: #fff;
+ display: block;
+ margin-bottom: 10px;
+ padding: 7px 10px;
+ background: #333;
+}
+.com_mission a {
+ display: block;
+ box-shadow: 0px 3px 5px #aaa;
+ border-radius: 15px;
+}
+.com_mission a:hover {
+ box-shadow: none;
+ transform: translateY(3px);
+ opacity: .8;
+ transition: .3s;
+}
