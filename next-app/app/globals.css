@@ -312,7 +312,7 @@ body {
 }
 .va-carousel-dots {
   position: absolute;
-  bottom: 24px;
+  top: 24px;
   right: 24px;
   display: flex;
   gap: 8px;
@@ -369,11 +369,11 @@ body {
 
 .va-hero-mascot {
   position: absolute;
-  top: -28px;
-  right: -24px;
+  bottom: 16px;
+  right: 16px;
   z-index: 5;
   pointer-events: none;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
   animation: mascotBounce 4.2s ease-in-out infinite;
 }
 .va-hero-mascot img {
@@ -1380,7 +1380,7 @@ body {
   .va-hero { grid-template-columns: 1fr; padding: 40px 24px 60px; gap: 40px; min-height: auto; }
   .va-hero-visual { height: 340px; }
   .va-hero-mascot img { width: 110px; }
-  .va-hero-mascot { top: -16px; right: -10px; }
+  .va-hero-mascot { bottom: 12px; right: 12px; }
   .va-scroll-hint { display: none; }
   .va-section { padding: 70px 24px; }
   .va-about-grid,
