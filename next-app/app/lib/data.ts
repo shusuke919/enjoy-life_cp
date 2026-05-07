@@ -1,5 +1,7 @@
 export type HomeSlug = "nakata" | "misono" | "kyuhoji" | "comingsoon";
 
+export type VacancyStatus = "available" | "full" | "comingsoon";
+
 export type Home = {
   slug: HomeSlug;
   name: string;
@@ -9,6 +11,8 @@ export type Home = {
   type: string;
   features: string[];
   color: string;
+  vacancy: string;
+  vacancyStatus: VacancyStatus;
 };
 
 export const homes: Home[] = [
@@ -21,6 +25,8 @@ export const homes: Home[] = [
     type: "共同生活援助",
     features: ["満床", "男性専用"],
     color: "#5BB8D6",
+    vacancy: "満床",
+    vacancyStatus: "full",
   },
   {
     slug: "misono",
@@ -31,6 +37,8 @@ export const homes: Home[] = [
     type: "共同生活援助",
     features: ["1部屋空きあり", "男性専用"],
     color: "#6FBA6C",
+    vacancy: "1部屋空きあり",
+    vacancyStatus: "available",
   },
   {
     slug: "kyuhoji",
@@ -41,6 +49,8 @@ export const homes: Home[] = [
     type: "共同生活援助",
     features: ["2部屋空きあり", "男性専用"],
     color: "#F5A73F",
+    vacancy: "2部屋空きあり",
+    vacancyStatus: "available",
   },
   {
     slug: "comingsoon",
@@ -51,6 +61,8 @@ export const homes: Home[] = [
     type: "共同生活援助",
     features: ["2026年開設予定"],
     color: "#E85A8A",
+    vacancy: "2026年開設予定",
+    vacancyStatus: "comingsoon",
   },
 ];
 

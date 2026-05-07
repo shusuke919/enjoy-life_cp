@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { heroImages } from "../lib/data";
+import { heroImages, homes } from "../lib/data";
 import PlaceholderArt from "./PlaceholderArt";
 
 export default function Hero() {
@@ -54,6 +54,22 @@ export default function Hero() {
             <strong>2022</strong>
             <span>年設立</span>
           </div>
+        </div>
+        <div className="va-vacancy-board" aria-label="各事業所の空室情報">
+          <div className="va-vacancy-head">
+            <span className="va-vacancy-dot" />
+            空室状況
+          </div>
+          <ul className="va-vacancy-list">
+            {homes.map((h) => (
+              <li key={h.slug} className={`va-vacancy-item is-${h.vacancyStatus}`}>
+                <span className="va-vacancy-name" style={{ color: h.color }}>
+                  {h.short}
+                </span>
+                <span className="va-vacancy-status">{h.vacancy}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
