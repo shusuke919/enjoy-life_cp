@@ -381,18 +381,6 @@ body {
   height: auto;
   display: block;
 }
-.va-contact-mascot {
-  display: inline-block;
-  margin-bottom: 14px;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
-  animation: mascotBounce 4.2s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-.va-contact-mascot img {
-  width: 120px;
-  height: auto;
-  display: block;
-}
 @keyframes mascotBounce {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
   50% { transform: translateY(-10px) rotate(3deg); }
@@ -1393,7 +1381,6 @@ body {
   .va-hero-visual { height: 340px; }
   .va-hero-mascot img { width: 110px; }
   .va-hero-mascot { top: -16px; right: -10px; }
-  .va-contact-mascot img { width: 90px; }
   .va-scroll-hint { display: none; }
   .va-section { padding: 70px 24px; }
   .va-about-grid,
