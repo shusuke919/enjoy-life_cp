@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { homes } from "../lib/data";
@@ -38,6 +39,9 @@ export default function Contact() {
         <div className="va-contact-head reveal">
           <div className="va-section-label">
             <span style={{ background: "#E85A8A" }} /> Contact
+          </div>
+          <div className="va-contact-mascot" aria-hidden="true">
+            <Image src="/assets/mascot.png" alt="" width={120} height={97} />
           </div>
           <h2 className="va-section-title">
             まずは、

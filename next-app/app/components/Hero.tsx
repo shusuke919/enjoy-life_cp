@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { heroImages } from "../lib/data";
 import PlaceholderArt from "./PlaceholderArt";
@@ -20,7 +21,7 @@ export default function Hero() {
           <span className="va-dot" style={{ background: "#6FBA6C" }} />
           <span className="va-dot" style={{ background: "#F5A73F" }} />
           <span className="va-dot" style={{ background: "#E85A8A" }} />
-          <span>障害者グループホーム</span>
+          <span>障がい者グループホーム</span>
         </div>
         <h1 className="va-hero-title">
           あなたの<span className="va-mark va-mark-blue">「やってみたい」</span>が
@@ -28,13 +29,13 @@ export default function Hero() {
           ここから<span className="va-mark va-mark-orange">はじまる</span>。
         </h1>
         <p className="va-hero-sub">
-          私たち株式会社enjoy lifeは、障害のある方が自分らしく、
+          私たち株式会社enjoy lifeは、障がいのある方が自分らしく、
           <br className="va-br-pc" />
           安心して暮らせる&ldquo;もう一つの我が家&rdquo;をつくっています。
         </p>
         <div className="va-hero-ctas">
           <a href="#contact" className="va-btn va-btn-primary">
-            入居のご相談 <span className="va-arrow">→</span>
+            見学のご相談 <span className="va-arrow">→</span>
           </a>
           <a href="#homes" className="va-btn va-btn-ghost">
             事業所を見る
@@ -46,11 +47,11 @@ export default function Hero() {
             <span>事業所</span>
           </div>
           <div>
-            <strong>24</strong>
+            <strong>14</strong>
             <span>名定員</span>
           </div>
           <div>
-            <strong>2018</strong>
+            <strong>2022</strong>
             <span>年設立</span>
           </div>
         </div>
@@ -82,6 +83,9 @@ export default function Hero() {
         <div className="va-blob va-blob-1" />
         <div className="va-blob va-blob-2" />
         <div className="va-blob va-blob-3" />
+        <div className="va-hero-mascot" aria-hidden="true">
+          <Image src="/assets/mascot.png" alt="" width={180} height={145} priority />
+        </div>
       </div>
 
       <div className="va-scroll-hint">

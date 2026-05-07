@@ -4,11 +4,13 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { useState } from "react";
 import { homes } from "../lib/data";
+import { homeDetails } from "../lib/homeDetails";
 import PlaceholderArt from "./PlaceholderArt";
 
 export default function Homes() {
   const [active, setActive] = useState(0);
   const home = homes[active];
+  const detail = homeDetails[home.slug];
 
   return (
     <section className="va-section va-homes" id="homes">
@@ -18,7 +20,7 @@ export default function Homes() {
         </div>
         <h2 className="va-section-title">4つの事業所</h2>
         <p className="va-section-sub">
-          東京都内にて、それぞれ異なる魅力を持つ4つのホームを運営しています。
+          大阪府八尾市内にて、4つのホームを展開しています（うち1拠点は2026年開設予定）。
         </p>
       </div>
 
@@ -50,16 +52,12 @@ export default function Homes() {
           <h3 className="va-home-name">{home.name}</h3>
           <dl className="va-home-dl">
             <div>
-              <dt>サービス種別</dt>
-              <dd>{home.type}</dd>
-            </div>
-            <div>
               <dt>定員</dt>
               <dd>{home.rooms}</dd>
             </div>
             <div>
               <dt>所在地</dt>
-              <dd>{home.area}</dd>
+              <dd>{detail.fullAddress}</dd>
             </div>
           </dl>
           <div className="va-home-features">

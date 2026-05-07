@@ -1,4 +1,4 @@
-export type HomeSlug = "sakuragaoka" | "suginami" | "musashino" | "kokubunji";
+export type HomeSlug = "nakata" | "misono" | "kyuhoji" | "comingsoon";
 
 export type Home = {
   slug: HomeSlug;
@@ -13,43 +13,43 @@ export type Home = {
 
 export const homes: Home[] = [
   {
-    slug: "sakuragaoka",
-    name: "enjoy life 桜ヶ丘",
-    short: "桜ヶ丘",
-    area: "東京都世田谷区",
-    rooms: "定員 6名",
+    slug: "nakata",
+    name: "ピース八尾 中田",
+    short: "中田",
+    area: "大阪府八尾市",
+    rooms: "定員 4名（男性）",
     type: "共同生活援助",
-    features: ["駅徒歩8分", "日中サービス支援型", "女性専用フロアあり"],
+    features: ["満床", "男性専用"],
     color: "#5BB8D6",
   },
   {
-    slug: "suginami",
-    name: "enjoy life 杉並",
-    short: "杉並",
-    area: "東京都杉並区",
-    rooms: "定員 5名",
+    slug: "misono",
+    name: "ピース八尾 美園",
+    short: "美園",
+    area: "大阪府八尾市",
+    rooms: "定員 5名（男性）",
     type: "共同生活援助",
-    features: ["閑静な住宅街", "夜間支援あり", "個室完備"],
+    features: ["1部屋空きあり", "男性専用"],
     color: "#6FBA6C",
   },
   {
-    slug: "musashino",
-    name: "enjoy life 武蔵野",
-    short: "武蔵野",
-    area: "東京都武蔵野市",
-    rooms: "定員 7名",
+    slug: "kyuhoji",
+    name: "ピース八尾 久宝寺",
+    short: "久宝寺",
+    area: "大阪府八尾市",
+    rooms: "定員 5名（男性）",
     type: "共同生活援助",
-    features: ["緑豊かな環境", "バリアフリー", "広々リビング"],
+    features: ["2部屋空きあり", "男性専用"],
     color: "#F5A73F",
   },
   {
-    slug: "kokubunji",
-    name: "enjoy life 国分寺",
-    short: "国分寺",
-    area: "東京都国分寺市",
-    rooms: "定員 6名",
+    slug: "comingsoon",
+    name: "ピース八尾 4号店（仮称）",
+    short: "Coming Soon",
+    area: "大阪府八尾市",
+    rooms: "近日公開",
     type: "共同生活援助",
-    features: ["新築物件", "最寄駅徒歩5分", "24時間体制"],
+    features: ["2026年開設予定"],
     color: "#E85A8A",
   },
 ];
@@ -67,11 +67,11 @@ export const faqs: Faq[] = [
   },
   {
     q: "利用料金はどのくらいですか？",
-    a: "障害福祉サービス費は所得に応じた自己負担（月額0円〜37,200円）と、家賃・食費・光熱費等の実費がかかります。詳細は各事業所によって異なりますので、個別にご案内いたします。",
+    a: "障がい福祉サービス費は所得に応じた自己負担（月額0円〜37,200円）と、家賃・食費・光熱費等の実費がかかります。詳細は各事業所によって異なりますので、個別にご案内いたします。",
   },
   {
-    q: "対象となる障害の種別は？",
-    a: "身体障害・知的障害・精神障害のいずれの方もご利用いただけます。障害支援区分は問いません。医療的ケアが必要な方はご相談ください。",
+    q: "対象となる障がいの種別は？",
+    a: "身体障がい・知的障がい・精神障がいのいずれの方もご利用いただけます。障がい支援区分は問いません。医療的ケアが必要な方はご相談ください。",
   },
   {
     q: "家族との面会や外泊はできますか？",
@@ -134,7 +134,7 @@ export const representative = {
   bio: [
     { year: "2008", body: "都内福祉法人にて生活支援員として従事" },
     { year: "2014", body: "サービス管理責任者・施設長を歴任" },
-    { year: "2018", body: "株式会社enjoy life 設立" },
+    { year: "2022", body: "株式会社enjoy life 設立" },
     { year: "資格", body: "社会福祉士／精神保健福祉士" },
   ] satisfies RepBio[],
 };

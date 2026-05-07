@@ -61,7 +61,7 @@ body {
   border-bottom: 1px solid var(--line);
 }
 .va-logo img {
-  height: 34px;
+  height: 72px;
   display: block;
 }
 .va-nav {
@@ -365,6 +365,37 @@ body {
 @keyframes float {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(15px, -20px); }
+}
+
+.va-hero-mascot {
+  position: absolute;
+  top: -28px;
+  right: -24px;
+  z-index: 5;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.12));
+  animation: mascotBounce 4.2s ease-in-out infinite;
+}
+.va-hero-mascot img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+.va-contact-mascot {
+  display: inline-block;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
+  animation: mascotBounce 4.2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+.va-contact-mascot img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+@keyframes mascotBounce {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
 }
 
 .va-scroll-hint {
@@ -1262,22 +1293,22 @@ body {
 .va-footer {
   background: #2b2622;
   color: #e5dccb;
-  padding: 70px 80px 30px;
+  padding: 40px 80px 20px;
 }
 .va-footer-top {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 80px;
   max-width: 1200px;
-  margin: 0 auto 50px;
+  margin: 0 auto 28px;
 }
 .va-footer-logo {
   background: #fff;
-  padding: 10px 16px;
+  padding: 10px 14px;
   border-radius: 10px;
-  height: 50px;
+  height: 84px;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   width: auto;
 }
 .va-footer-brand p {
@@ -1288,7 +1319,7 @@ body {
 }
 .va-footer-cols {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
 .va-footer-cols h4 {
@@ -1314,7 +1345,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   border-top: 1px solid #3e362f;
-  padding-top: 24px;
+  padding-top: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1360,6 +1391,9 @@ body {
   .va-burger { display: flex; }
   .va-hero { grid-template-columns: 1fr; padding: 40px 24px 60px; gap: 40px; min-height: auto; }
   .va-hero-visual { height: 340px; }
+  .va-hero-mascot img { width: 110px; }
+  .va-hero-mascot { top: -16px; right: -10px; }
+  .va-contact-mascot img { width: 90px; }
   .va-scroll-hint { display: none; }
   .va-section { padding: 70px 24px; }
   .va-about-grid,
@@ -1377,8 +1411,8 @@ body {
   .va-rep-name { justify-content: center; }
   .va-rep-bio li { text-align: left; }
   .va-home-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
-  .va-footer { padding: 50px 24px 24px; }
-  .va-footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .va-footer { padding: 32px 24px 16px; }
+  .va-footer-top { grid-template-columns: 1fr; gap: 24px; margin-bottom: 20px; }
   .va-footer-cols { grid-template-columns: 1fr 1fr; gap: 24px; }
   .va-hero-stats { gap: 20px; }
   .va-hero-stats > div:not(:last-child) { padding-right: 20px; }

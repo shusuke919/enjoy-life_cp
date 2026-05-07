@@ -47,16 +47,12 @@ export default async function PdfBrochurePage({
         </div>
         <h1>
           {home.name}
-          <small>障害者グループホーム / 共同生活援助</small>
+          <small>障がい者グループホーム / 共同生活援助</small>
         </h1>
         <div className="area">{detail.fullAddress}</div>
         <div className="photo" style={{ background: accent }} />
         <table>
           <tbody>
-            <tr>
-              <th>サービス種別</th>
-              <td>共同生活援助（グループホーム）</td>
-            </tr>
             <tr>
               <th>定員</th>
               <td>{home.rooms}</td>
@@ -76,7 +72,7 @@ export default async function PdfBrochurePage({
           </tbody>
         </table>
         <p>
-          enjoy lifeは、障害のある方が地域で自分らしく暮らすためのグループホームを運営しています。
+          enjoy lifeは、障がいのある方が地域で自分らしく暮らすためのグループホームを運営しています。
           お一人おひとりの「やってみたい」を尊重し、24時間体制で生活全般をサポートします。
         </p>
         <p>

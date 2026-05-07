@@ -10,7 +10,7 @@ export default function Service() {
           <span style={{ background: "#5BB8D6" }} /> Our service
         </div>
         <h2 className="va-section-title">
-          障害者グループホーム
+          障がい者グループホーム
           <br />
           <small>（共同生活援助）</small>
         </h2>
@@ -18,7 +18,7 @@ export default function Service() {
       <div className="va-service-grid">
         <div className="va-service-copy reveal">
           <p className="va-lead">
-            共同生活援助（グループホーム）は、障害のある方が
+            共同生活援助（グループホーム）は、障がいのある方が
             <strong>地域の住まいで、少人数で共同生活</strong>
             を送るためのサービスです。
           </p>

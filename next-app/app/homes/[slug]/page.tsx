@@ -62,7 +62,7 @@ export default async function HomeDetailPage({
         </div>
         <h1>
           {home.name}
-          <small>障害者グループホーム / 共同生活援助</small>
+          <small>障がい者グループホーム / 共同生活援助</small>
         </h1>
         <div className="hd-hero-area">{detail.fullAddress}</div>
         <div className="hd-hero-features">

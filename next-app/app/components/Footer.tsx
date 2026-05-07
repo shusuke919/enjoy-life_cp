@@ -6,11 +6,11 @@ export default function Footer() {
       <div className="va-footer-top">
         <div className="va-footer-brand">
           <Image
-            src="/assets/logo.jpg"
+            src="/assets/logo-vertical.png"
             alt="enjoy life"
             className="va-footer-logo"
-            width={160}
-            height={50}
+            width={98}
+            height={120}
           />
           <p>
             人生を、楽しむ。
@@ -30,16 +30,6 @@ export default function Footer() {
             <a href="#flow">入居までの流れ</a>
             <a href="#faq">よくある質問</a>
             <a href="#contact">お問い合わせ</a>
-          </div>
-          <div>
-            <h4>所在地</h4>
-            <p>
-              〒000-0000
-              <br />
-              東京都○○区○○ 0-0-0
-              <br />
-              enjoy lifeビル 3F
-            </p>
           </div>
         </div>
       </div>
