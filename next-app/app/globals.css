@@ -281,6 +281,77 @@ body {
   border-right: 1px solid var(--line);
 }
 
+.va-vacancy-board {
+  margin-top: 28px;
+  padding: 16px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  max-width: 520px;
+  box-shadow: 0 8px 22px rgba(61, 55, 51, 0.04);
+}
+.va-vacancy-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+}
+.va-vacancy-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6FBA6C;
+  box-shadow: 0 0 0 4px rgba(111, 186, 108, 0.18);
+  animation: vacancyPulse 2.4s ease-in-out infinite;
+}
+@keyframes vacancyPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(111, 186, 108, 0.18); }
+  50% { box-shadow: 0 0 0 6px rgba(111, 186, 108, 0.06); }
+}
+.va-vacancy-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+.va-vacancy-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(61, 55, 51, 0.08);
+}
+.va-vacancy-name {
+  font-weight: 700;
+  font-family: var(--font-zen-maru), serif;
+}
+.va-vacancy-status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.va-vacancy-item.is-available .va-vacancy-status {
+  background: rgba(111, 186, 108, 0.15);
+  color: #4F9F4C;
+}
+.va-vacancy-item.is-full .va-vacancy-status {
+  background: rgba(61, 55, 51, 0.08);
+  color: var(--ink-mute);
+}
+.va-vacancy-item.is-comingsoon .va-vacancy-status {
+  background: rgba(232, 90, 138, 0.12);
+  color: #C0457A;
+}
+
 .va-hero-visual {
   position: relative;
   height: 560px;
@@ -1406,6 +1477,8 @@ body {
   .va-footer-cols { grid-template-columns: 1fr 1fr; gap: 24px; }
   .va-hero-stats { gap: 20px; }
   .va-hero-stats > div:not(:last-child) { padding-right: 20px; }
+  .va-vacancy-list { grid-template-columns: 1fr; gap: 0; }
+  .va-vacancy-board { padding: 14px 16px; }
   .va-br-pc { display: none; }
   .va-form-row { grid-template-columns: 1fr; }
 }
