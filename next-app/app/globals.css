@@ -23,6 +23,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -33,7 +35,7 @@ body {
   font-feature-settings: "palt";
   letter-spacing: 0.02em;
   line-height: 1.8;
-  overflow-x: hidden;
+  position: relative;
 }
 
 /* Reveal animation */
@@ -1398,6 +1400,7 @@ body {
   .va-rep-name { justify-content: center; }
   .va-rep-bio li { text-align: left; }
   .va-home-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+  .va-contact-form { padding: 24px; }
   .va-footer { padding: 32px 24px 16px; }
   .va-footer-top { grid-template-columns: 1fr; gap: 24px; margin-bottom: 20px; }
   .va-footer-cols { grid-template-columns: 1fr 1fr; gap: 24px; }
