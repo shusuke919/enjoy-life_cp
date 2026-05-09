@@ -51,7 +51,7 @@ export default function Contact() {
           </p>
           <div className="va-contact-tel">
             <span className="va-tel-label">お電話でのお問い合わせ</span>
-            <a href="tel:03-0000-0000">03-0000-0000</a>
+            <a href="tel:070-8319-1421">070-8319-1421</a>
             <span className="va-tel-hours">平日 9:00 - 18:00</span>
           </div>
           <div className="va-contact-pdfs">

@@ -187,8 +187,8 @@ export default async function HomeDetailPage({
               </svg>
               パンフレットPDF
             </Link>
-            <a className="hd-btn hd-btn-ghost" href="tel:03-0000-0000">
-              📞 03-0000-0000
+            <a className="hd-btn hd-btn-ghost" href="tel:070-8319-1421">
+              📞 070-8319-1421
             </a>
           </div>
         </div>

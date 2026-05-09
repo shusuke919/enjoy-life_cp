@@ -81,7 +81,7 @@ export default async function PdfBrochurePage({
         </p>
         <div className="foot">
           <span>株式会社 enjoy life</span>
-          <span>03-0000-0000 / info@enjoy-life.example</span>
+          <span>070-8319-1421 / info@enjoy-life.example</span>
         </div>
       </div>
     </div>
