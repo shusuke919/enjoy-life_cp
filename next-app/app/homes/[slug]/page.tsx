@@ -48,7 +48,7 @@ export default async function HomeDetailPage({
     <div className="hd-page" style={{ ["--accent" as string]: accent } as CSSProperties}>
       <header className="hd-header">
         <Link href="/" aria-label="enjoy life">
-          <Image src="/assets/logo.jpg" alt="enjoy life" width={120} height={32} priority style={{ height: 32, width: "auto" }} />
+          <Image src="/assets/logo.png" alt="enjoy life" width={393} height={72} priority style={{ height: 30, width: "auto" }} />
         </Link>
         <Link className="hd-back" href="/#homes">
           ← 事業所一覧へ戻る
@@ -94,6 +94,35 @@ export default async function HomeDetailPage({
           ))}
         </div>
       </section>
+
+      {detail.pricing && (
+        <section className="hd-section">
+          <div className="hd-section-head">
+            <span className="en">PRICING</span>
+            <h2>利用料金</h2>
+          </div>
+          <div className="hd-pricing">
+            <ul className="hd-pricing-list">
+              {detail.pricing.items.map((item) => (
+                <li key={item.label} className={item.amount < 0 ? "is-discount" : ""}>
+                  <div className="hd-pricing-label">
+                    <span>{item.label}</span>
+                    {item.note && <small>{item.note}</small>}
+                  </div>
+                  <div className="hd-pricing-amount">
+                    {item.amount < 0 ? "−" : ""}¥{Math.abs(item.amount).toLocaleString()}
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className="hd-pricing-total">
+              <span>合計（月額）</span>
+              <strong>¥{detail.pricing.total.toLocaleString()}</strong>
+            </div>
+            {detail.pricing.note && <p className="hd-pricing-note">※ {detail.pricing.note}</p>}
+          </div>
+        </section>
+      )}
 
       <section className="hd-section">
         <div className="hd-section-head">

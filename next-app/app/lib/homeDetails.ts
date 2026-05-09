@@ -1,11 +1,24 @@
 import type { HomeSlug } from "./data";
 
+export type PricingItem = {
+  label: string;
+  amount: number;
+  note?: string;
+};
+
+export type Pricing = {
+  items: PricingItem[];
+  total: number;
+  note?: string;
+};
+
 export type HomeDetail = {
   en: string;
   index: string;
   fullAddress: string;
   spec: { dt: string; dd: string }[];
   access: { label: string; body: string }[];
+  pricing?: Pricing;
 };
 
 export const homeDetails: Record<HomeSlug, HomeDetail> = {
@@ -16,12 +29,24 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
     spec: [
       { dt: "定員", dd: "4名（男性）" },
       { dt: "空床状況", dd: "満床" },
-      { dt: "対象", dd: "身体・知的・精神障がい（区分問わず）" },
+      { dt: "対象", dd: "身体・知的・精神障がい" },
       { dt: "支援体制", dd: "世話人・生活支援員 / 夜間支援あり" },
     ],
     access: [
       { label: "所在地", body: "〒581-0014 大阪府八尾市中田1-3 友田コーポ141" },
     ],
+    pricing: {
+      items: [
+        { label: "家賃", amount: 24500 },
+        { label: "家賃補助", amount: -10000, note: "家賃補助対象の方のみ" },
+        { label: "食費", amount: 27000 },
+        { label: "水道光熱費", amount: 10000 },
+        { label: "日用品", amount: 3000 },
+        { label: "通信費", amount: 2000 },
+      ],
+      total: 56500,
+      note: "上記は月額の目安です。別途、障がい福祉サービス費（所得に応じた自己負担）が必要です。",
+    },
   },
   misono: {
     en: "MISONO",
@@ -30,12 +55,24 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
     spec: [
       { dt: "定員", dd: "5名（男性）" },
       { dt: "空床状況", dd: "1部屋空きあり" },
-      { dt: "対象", dd: "身体・知的・精神障がい（区分問わず）" },
+      { dt: "対象", dd: "身体・知的・精神障がい" },
       { dt: "支援体制", dd: "世話人・生活支援員 / 夜間支援あり" },
     ],
     access: [
       { label: "所在地", body: "〒581-0018 大阪府八尾市美園町3-78-1 ピアパーク美園401・402" },
     ],
+    pricing: {
+      items: [
+        { label: "家賃", amount: 28000 },
+        { label: "家賃補助", amount: -10000, note: "家賃補助対象の方のみ" },
+        { label: "食費", amount: 27000 },
+        { label: "水道光熱費", amount: 10000 },
+        { label: "日用品", amount: 3000 },
+        { label: "通信費", amount: 2000 },
+      ],
+      total: 60000,
+      note: "上記は月額の目安です。別途、障がい福祉サービス費（所得に応じた自己負担）が必要です。",
+    },
   },
   kyuhoji: {
     en: "KYUHOJI",
@@ -44,12 +81,24 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
     spec: [
       { dt: "定員", dd: "5名（男性）" },
       { dt: "空床状況", dd: "2部屋空きあり" },
-      { dt: "対象", dd: "身体・知的・精神障がい（区分問わず）" },
+      { dt: "対象", dd: "身体・知的・精神障がい" },
       { dt: "支援体制", dd: "世話人・生活支援員 / 夜間支援あり" },
     ],
     access: [
       { label: "所在地", body: "〒581-0076 大阪府八尾市南久宝寺3-48-2 ハイツ南久宝寺302・303" },
     ],
+    pricing: {
+      items: [
+        { label: "家賃", amount: 28000 },
+        { label: "家賃補助", amount: -10000, note: "家賃補助対象の方のみ" },
+        { label: "食費", amount: 27000 },
+        { label: "水道光熱費", amount: 10000 },
+        { label: "日用品", amount: 3000 },
+        { label: "通信費", amount: 2000 },
+      ],
+      total: 60000,
+      note: "上記は月額の目安です。別途、障がい福祉サービス費（所得に応じた自己負担）が必要です。",
+    },
   },
   comingsoon: {
     en: "COMING SOON",
@@ -59,7 +108,7 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
       { dt: "開設予定", dd: "2026年" },
       { dt: "所在地", dd: "大阪府八尾市内（詳細は近日公開）" },
       { dt: "定員", dd: "近日公開" },
-      { dt: "対象", dd: "身体・知的・精神障がい（区分問わず）" },
+      { dt: "対象", dd: "身体・知的・精神障がい" },
     ],
     access: [
       { label: "所在地", body: "大阪府八尾市内（詳細は近日公開）" },
@@ -68,8 +117,8 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
 };
 
 export const dailySchedule = [
-  { time: "7:00", title: "起床・朝食", body: "世話人と一緒に朝食を準備。服薬の確認も行います。" },
+  { time: "7:00", title: "起床・朝食", body: "1日の始まり。スタッフと体調を確認しながら、朝食をいただきます。" },
   { time: "9:00", title: "日中活動へ", body: "就労支援B型・生活介護など各自の通所先へ出発。" },
-  { time: "17:00", title: "帰宅・夕食", body: "“ただいま”のあとは、みんなで夕食。週1で外食イベントも。" },
-  { time: "22:00", title: "就寝", body: "夜間も支援員が常駐。安心しておやすみいただけます。" },
+  { time: "17:00", title: "帰宅・夕食", body: "“ただいま”のあとは、みんなで夕食。時には外食イベントや誕生日会も。" },
+  { time: "22:00", title: "就寝", body: "夜間もスタッフが対応します。安心しておやすみいただけます。" },
 ];
