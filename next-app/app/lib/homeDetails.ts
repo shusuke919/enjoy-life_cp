@@ -45,7 +45,7 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
         { label: "通信費", amount: 2000 },
       ],
       total: 56500,
-      note: "上記は月額の目安です。別途、障がい福祉サービス費（所得に応じた自己負担）が必要です。",
+      note: "別途、所得に応じて障がい福祉サービス費が必要になる場合があります。",
     },
   },
   misono: {
@@ -71,7 +71,7 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
         { label: "通信費", amount: 2000 },
       ],
       total: 60000,
-      note: "上記は月額の目安です。別途、障がい福祉サービス費（所得に応じた自己負担）が必要です。",
+      note: "別途、所得に応じて障がい福祉サービス費が必要になる場合があります。",
     },
   },
   kyuhoji: {
@@ -97,7 +97,7 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
         { label: "通信費", amount: 2000 },
       ],
       total: 60000,
-      note: "上記は月額の目安です。別途、障がい福祉サービス費（所得に応じた自己負担）が必要です。",
+      note: "別途、所得に応じて障がい福祉サービス費が必要になる場合があります。",
     },
   },
   comingsoon: {
