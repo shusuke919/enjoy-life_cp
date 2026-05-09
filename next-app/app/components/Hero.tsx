@@ -29,9 +29,9 @@ export default function Hero() {
           ここから<span className="va-mark va-mark-orange">はじまる</span>。
         </h1>
         <p className="va-hero-sub">
-          私たち株式会社enjoy lifeは、障がいのある方が自分らしく、
-          <br className="va-br-pc" />
-          安心して暮らせる&ldquo;もう一つの我が家&rdquo;をつくっています。
+          入居したときには難しかったことが、少しずつ日常になっていく。
+          <br />
+          enjoy lifeは「もう一つの我が家」から、一人ひとりの歩幅で自立への一歩を支えます。
         </p>
         <div className="va-hero-ctas">
           <a href="#contact" className="va-btn va-btn-primary">
