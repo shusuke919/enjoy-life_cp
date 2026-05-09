@@ -24,9 +24,9 @@ export default function Hero() {
           <span>障がい者グループホーム</span>
         </div>
         <h1 className="va-hero-title">
-          あなたの<span className="va-mark va-mark-blue">「やってみたい」</span>が
+          <span className="va-mark va-mark-blue">あきらめていた</span>日々を、
           <br />
-          ここから<span className="va-mark va-mark-orange">はじまる</span>。
+          「<span className="va-mark va-mark-orange">当たり前</span>」に。
         </h1>
         <p className="va-hero-sub">
           入居したときには難しかったことが、少しずつ日常になっていく。
