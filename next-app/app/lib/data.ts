@@ -147,6 +147,7 @@ export const representative = {
   badge: "Founder & CEO",
   name: "坂口 亮太",
   nameEn: "Ryota Sakaguchi",
+  photo: "/about/representative.jpg",
   bio: [
     { year: "2022.05", body: "株式会社enjoy life 設立" },
     { year: "2022.09", body: "ピース八尾 中田 開所" },

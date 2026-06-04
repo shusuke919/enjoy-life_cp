@@ -1,6 +1,6 @@
+import Image from "next/image";
 import type { CSSProperties } from "react";
 import { representative, values } from "../lib/data";
-import PlaceholderArt from "./PlaceholderArt";
 
 export default function About() {
   return (
@@ -19,7 +19,15 @@ export default function About() {
         <div className="va-about-message reveal">
           <div className="va-rep-card">
             <div className="va-rep-photo">
-              <PlaceholderArt tone="#F5A73F22" label="代表写真" idx={0} small />
+              <div className="va-rep-photo-mask">
+                <Image
+                  src={representative.photo}
+                  alt={`${representative.name} ${representative.role}`}
+                  fill
+                  sizes="(max-width: 860px) 140px, 140px"
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
+                />
+              </div>
               <div className="va-rep-ring" />
               <div className="va-rep-badge">{representative.badge}</div>
             </div>
