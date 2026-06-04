@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { heroImages, homes } from "../lib/data";
-import PlaceholderArt from "./PlaceholderArt";
 
 export default function Hero() {
   const [idx, setIdx] = useState(0);
@@ -85,8 +84,14 @@ export default function Hero() {
               className={`va-carousel-slide ${i === idx ? "active" : ""}`}
               style={{ background: img.tone }}
             >
-              <PlaceholderArt tone={img.tone} label={img.label} idx={i} />
-              <div className="va-carousel-caption">{img.label}</div>
+              <Image
+                src={img.src}
+                alt={img.label}
+                fill
+                sizes="(max-width: 860px) 100vw, 560px"
+                style={{ objectFit: "cover" }}
+                priority={i === 0}
+              />
             </div>
           ))}
           <div className="va-carousel-dots">

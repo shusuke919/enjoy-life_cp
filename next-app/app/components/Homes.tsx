@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { useState } from "react";
@@ -42,7 +43,18 @@ export default function Homes() {
       {/* Detailed panel for active home */}
       <div className="va-home-panel reveal" style={{ ["--accent" as string]: home.color } as CSSProperties}>
         <div className="va-home-visual">
-          <PlaceholderArt tone={home.color + "33"} label="外観イメージ" idx={active} />
+          {detail.gallery ? (
+            <Image
+              src={detail.gallery[0].src}
+              alt={`${home.name} 外観`}
+              fill
+              sizes="(max-width: 860px) 100vw, 560px"
+              style={{ objectFit: "cover" }}
+              priority={active === 0}
+            />
+          ) : (
+            <PlaceholderArt tone={home.color + "33"} label="外観イメージ" idx={active} />
+          )}
           <div className="va-home-badge" style={{ background: home.color }}>
             0{active + 1}
           </div>
@@ -75,30 +87,31 @@ export default function Homes() {
             >
               詳細を見る <span className="va-arrow">→</span>
             </Link>
-            <Link
-              href={`/pdfs/${home.slug}`}
-              target="_blank"
-              rel="noopener"
-              className="va-btn va-btn-ghost"
-              style={{ borderColor: home.color, color: home.color }}
-            >
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                style={{ marginRight: 6 }}
+            {detail.pdfUrl && (
+              <a
+                href={detail.pdfUrl}
+                download={detail.pdfFilename}
+                className="va-btn va-btn-ghost va-btn-pdf"
+                style={{ ["--accent" as string]: home.color, borderColor: home.color, color: home.color } as CSSProperties}
               >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              パンフレットPDF
-            </Link>
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{ marginRight: 6 }}
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                パンフレットPDF
+              </a>
+            )}
           </div>
         </div>
       </div>

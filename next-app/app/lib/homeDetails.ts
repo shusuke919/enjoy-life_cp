@@ -12,6 +12,11 @@ export type Pricing = {
   note?: string;
 };
 
+export type GalleryItem = {
+  src: string;
+  label: string;
+};
+
 export type HomeDetail = {
   en: string;
   index: string;
@@ -19,7 +24,17 @@ export type HomeDetail = {
   spec: { dt: string; dd: string }[];
   access: { label: string; body: string }[];
   pricing?: Pricing;
+  gallery?: GalleryItem[];
+  pdfUrl?: string;
+  pdfFilename?: string;
 };
+
+const gallery = (slug: "nakata" | "misono" | "kyuhoji"): GalleryItem[] => [
+  { src: `/homes/${slug}/exterior.jpg`, label: "外観" },
+  { src: `/homes/${slug}/living.jpg`, label: "リビング" },
+  { src: `/homes/${slug}/washitsu.jpg`, label: "和室" },
+  { src: `/homes/${slug}/yoshitsu.jpg`, label: "洋室" },
+];
 
 export const homeDetails: Record<HomeSlug, HomeDetail> = {
   nakata: {
@@ -47,6 +62,9 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
       total: 56500,
       note: "別途、所得に応じて障がい福祉サービス費が必要になる場合があります。",
     },
+    gallery: gallery("nakata"),
+    pdfUrl: "/pdfs/nakata.pdf",
+    pdfFilename: "ピース八尾-中田.pdf",
   },
   misono: {
     en: "MISONO",
@@ -73,6 +91,9 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
       total: 60000,
       note: "別途、所得に応じて障がい福祉サービス費が必要になる場合があります。",
     },
+    gallery: gallery("misono"),
+    pdfUrl: "/pdfs/misono.pdf",
+    pdfFilename: "ピース八尾-美園.pdf",
   },
   kyuhoji: {
     en: "KYUHOJI",
@@ -99,6 +120,9 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
       total: 60000,
       note: "別途、所得に応じて障がい福祉サービス費が必要になる場合があります。",
     },
+    gallery: gallery("kyuhoji"),
+    pdfUrl: "/pdfs/kyuhoji.pdf",
+    pdfFilename: "ピース八尾-久宝寺.pdf",
   },
   comingsoon: {
     en: "COMING SOON",

@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { homes } from "../lib/data";
+import { homeDetails } from "../lib/homeDetails";
 
 type FormState = {
   name: string;
@@ -60,12 +60,14 @@ export default function Contact() {
               各事業所のパンフレット（A4・1ページ）をPDFでダウンロードいただけます。
             </p>
             <div className="va-contact-pdfs-grid">
-              {homes.map((h) => (
-                <Link
+              {homes
+                .map((h) => ({ home: h, detail: homeDetails[h.slug] }))
+                .filter(({ detail }) => detail.pdfUrl)
+                .map(({ home: h, detail }) => (
+                <a
                   key={h.slug}
-                  href={`/pdfs/${h.slug}`}
-                  target="_blank"
-                  rel="noopener"
+                  href={detail.pdfUrl}
+                  download={detail.pdfFilename}
                   className="va-pdf-dl"
                   style={{ ["--accent" as string]: h.color, borderColor: h.color, color: h.color }}
                   aria-label={`${h.name} のパンフレットをダウンロード`}
@@ -86,7 +88,7 @@ export default function Contact() {
                     <line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
                   <span>{h.short}</span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
