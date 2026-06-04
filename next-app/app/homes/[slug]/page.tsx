@@ -36,13 +36,7 @@ export default async function HomeDetailPage({
   if (!home || !detail) notFound();
 
   const accent = home.color;
-  const galleries: { label: string; bg: string }[] = [
-    { label: "外観", bg: `linear-gradient(135deg, ${accent}33, ${accent}66)` },
-    { label: "リビング", bg: "linear-gradient(135deg, #F5A73F33, #F5A73F55)" },
-    { label: "個室", bg: "linear-gradient(135deg, #6FBA6C33, #6FBA6C55)" },
-    { label: "ダイニング", bg: "linear-gradient(135deg, #E85A8A33, #E85A8A55)" },
-    { label: "共用部", bg: `linear-gradient(135deg, ${accent}33, ${accent}44)` },
-  ];
+  const gallery = detail.gallery;
 
   return (
     <div className="hd-page" style={{ ["--accent" as string]: accent } as CSSProperties}>
@@ -72,13 +66,22 @@ export default async function HomeDetailPage({
         </div>
       </section>
 
-      <section className="hd-gallery">
-        {galleries.map((g) => (
-          <div key={g.label} className="hd-gallery-item" style={{ background: g.bg }}>
-            <div className="label">{g.label}</div>
-          </div>
-        ))}
-      </section>
+      {gallery && (
+        <section className="hd-gallery">
+          {gallery.map((g) => (
+            <div key={g.label} className="hd-gallery-item">
+              <Image
+                src={g.src}
+                alt={`${home.name} ${g.label}`}
+                fill
+                sizes="(max-width: 860px) 50vw, (max-width: 1200px) 40vw, 480px"
+                style={{ objectFit: "cover" }}
+              />
+              <div className="label">{g.label}</div>
+            </div>
+          ))}
+        </section>
+      )}
 
       <section className="hd-section">
         <div className="hd-section-head">
@@ -174,19 +177,20 @@ export default async function HomeDetailPage({
             <Link className="hd-btn hd-btn-primary" href="/#contact">
               お問い合わせ →
             </Link>
-            <Link
-              className="hd-btn hd-btn-accent"
-              href={`/pdfs/${home.slug}`}
-              target="_blank"
-              rel="noopener"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              パンフレットPDF
-            </Link>
+            {detail.pdfUrl && (
+              <a
+                className="hd-btn hd-btn-accent"
+                href={detail.pdfUrl}
+                download={detail.pdfFilename}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                パンフレットPDF
+              </a>
+            )}
             <a className="hd-btn hd-btn-ghost" href="tel:070-8319-1421">
               📞 070-8319-1421
             </a>

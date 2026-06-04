@@ -91,12 +91,16 @@ export const faqs: Faq[] = [
   },
 ];
 
-export type HeroSlide = { label: string; tone: string };
+export type HeroSlide = { label: string; src: string; tone: string };
 
 export const heroImages: HeroSlide[] = [
-  { label: "リビングで過ごす穏やかな時間", tone: "#FDE8D4" },
-  { label: "仲間と一緒に作る夕食", tone: "#E4F1DC" },
-  { label: "近所の公園へのお散歩", tone: "#DCECF4" },
+  { label: "リビングで過ごす穏やかな時間", src: "/hero/living.png", tone: "#FDE8D4" },
+  { label: "みんなで作る夕食", src: "/hero/cooking.png", tone: "#E4F1DC" },
+  { label: "食卓を囲むひととき", src: "/hero/dinner.png", tone: "#F4E2C9" },
+  { label: "創作活動を楽しむ時間", src: "/hero/craft.png", tone: "#F5D9C2" },
+  { label: "朝のストレッチで一日のはじまり", src: "/hero/stretch.png", tone: "#E6E2C8" },
+  { label: "暮らしの家事を分担", src: "/hero/laundry.png", tone: "#F0E5C8" },
+  { label: "近所へお散歩", src: "/hero/walk.png", tone: "#DCECF4" },
 ];
 
 export type Value = { c: string; t: string; d: string };
