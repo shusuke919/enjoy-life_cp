@@ -608,11 +608,13 @@ body {
   border-radius: 50%;
   overflow: visible;
 }
-.va-rep-photo > :first-child {
+.va-rep-photo-mask {
+  position: relative;
   width: 140px;
   height: 140px;
   border-radius: 50%;
   overflow: hidden;
+  background: #f5a73f11;
 }
 .va-rep-ring {
   position: absolute;
