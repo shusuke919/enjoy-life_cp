@@ -1287,6 +1287,10 @@ body {
 }
 @media (max-width: 460px) {
   .va-contact-pdfs-grid { grid-template-columns: 1fr; }
+  .va-hero-title { font-size: 26px; }
+  .va-hero-title-line { white-space: normal; }
+  .va-homes-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .va-home-tab { min-width: 0; padding: 14px 14px; gap: 8px; font-size: 13px; }
 }
 
 .va-contact-form {
