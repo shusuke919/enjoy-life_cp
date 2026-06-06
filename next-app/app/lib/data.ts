@@ -55,7 +55,7 @@ export const homes: Home[] = [
   {
     slug: "comingsoon",
     name: "ピース八尾 4号店（仮称）",
-    short: "Coming Soon",
+    short: "安中（予定）",
     area: "大阪府八尾市",
     rooms: "近日公開",
     type: "共同生活援助",
