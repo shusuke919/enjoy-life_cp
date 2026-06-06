@@ -808,17 +808,19 @@ body {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
 }
 .va-homes-tabs {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 170px);
   gap: 12px;
   max-width: 1000px;
   margin: 0 auto 32px;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .va-home-tab {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  min-width: 170px;
   padding: 14px 24px;
   background: var(--bg-card);
   border: 2px solid var(--line);
