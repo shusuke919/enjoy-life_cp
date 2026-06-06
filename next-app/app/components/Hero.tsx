@@ -24,11 +24,11 @@ export default function Hero() {
         </div>
         <h1 className="va-hero-title">
           <span className="va-hero-title-line">
-            <span className="va-mark va-mark-blue">あきらめていた</span>日々を、
+            人生を、<span className="va-mark va-mark-orange">楽しむ</span>。
           </span>
           <br />
           <span className="va-hero-title-line">
-            「<span className="va-mark va-mark-orange">当たり前</span>」に。
+            その<span className="va-mark va-mark-blue">あたりまえ</span>を、ここから。
           </span>
         </h1>
         <p className="va-hero-sub">
