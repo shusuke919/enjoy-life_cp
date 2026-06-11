@@ -94,13 +94,12 @@ export const faqs: Faq[] = [
 export type HeroSlide = { label: string; src: string; tone: string };
 
 export const heroImages: HeroSlide[] = [
-  { label: "リビングで過ごす穏やかな時間", src: "/hero/living.png", tone: "#FDE8D4" },
-  { label: "みんなで作る夕食", src: "/hero/cooking.png", tone: "#E4F1DC" },
-  { label: "食卓を囲むひととき", src: "/hero/dinner.png", tone: "#F4E2C9" },
-  { label: "創作活動を楽しむ時間", src: "/hero/craft.png", tone: "#F5D9C2" },
-  { label: "朝のストレッチで一日のはじまり", src: "/hero/stretch.png", tone: "#E6E2C8" },
-  { label: "暮らしの家事を分担", src: "/hero/laundry.png", tone: "#F0E5C8" },
-  { label: "近所へお散歩", src: "/hero/walk.png", tone: "#DCECF4" },
+  { label: "毎朝の「いってらっしゃい」", src: "/hero/1_sendoff.jpg", tone: "#DCE6F0" },
+  { label: "外食を楽しむ、みんなの時間", src: "/hero/2_dining-out.jpg", tone: "#F4E2C9" },
+  { label: "地域のお祭りへおでかけ", src: "/hero/3_festival.jpg", tone: "#2E3A57" },
+  { label: "暮らしの整えを、いっしょに", src: "/hero/4_tidyup.jpg", tone: "#E6E8EC" },
+  { label: "福祉の相談・手続きもサポート", src: "/hero/5_welfare.jpg", tone: "#E4ECF2" },
+  { label: "医療・こころの健康に寄り添う", src: "/hero/6_health.jpg", tone: "#E7EEF0" },
 ];
 
 export type Value = { c: string; t: string; d: string };
