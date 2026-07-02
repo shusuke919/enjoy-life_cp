@@ -23,13 +23,32 @@ const empty: FormState = {
 export default function Contact() {
   const [form, setForm] = useState<FormState>(empty);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: replace with Server Action / Resend / SendGrid integration
-    setSubmitted(true);
-    setForm(empty);
-    setTimeout(() => setSubmitted(false), 4000);
+    if (sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error ?? "送信に失敗しました。時間をおいて再度お試しください。");
+      }
+      setSubmitted(true);
+      setForm(empty);
+      setTimeout(() => setSubmitted(false), 6000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "送信に失敗しました。時間をおいて再度お試しください。");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -99,6 +118,7 @@ export default function Contact() {
               ✓ お問い合わせを受け付けました。担当者より3営業日以内にご連絡いたします。
             </div>
           )}
+          {error && <div className="va-form-error">{error}</div>}
           <label>
             <span>
               お名前 <em>必須</em>
@@ -158,8 +178,8 @@ export default function Contact() {
               placeholder="ご質問やご相談内容をご記入ください。"
             />
           </label>
-          <button type="submit" className="va-btn va-btn-primary va-btn-lg">
-            送信する <span className="va-arrow">→</span>
+          <button type="submit" className="va-btn va-btn-primary va-btn-lg" disabled={sending}>
+            {sending ? "送信中…" : "送信する"} <span className="va-arrow">→</span>
           </button>
         </form>
       </div>
