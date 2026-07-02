@@ -1361,6 +1361,19 @@ body {
   font-weight: 600;
   animation: popIn 0.3s ease;
 }
+.va-form-error {
+  background: #E85A8A;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  animation: popIn 0.3s ease;
+}
+.va-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 @keyframes popIn {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: none; }
