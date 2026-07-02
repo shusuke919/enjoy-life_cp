@@ -47,9 +47,9 @@ export const homes: Home[] = [
     area: "大阪府八尾市",
     rooms: "定員 5名（男性）",
     type: "共同生活援助",
-    features: ["2部屋空きあり", "男性専用"],
+    features: ["1部屋空きあり", "男性専用"],
     color: "#F5A73F",
-    vacancy: "2部屋空きあり",
+    vacancy: "1部屋空きあり",
     vacancyStatus: "available",
   },
   {
