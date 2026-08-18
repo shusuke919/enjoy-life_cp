@@ -72,7 +72,7 @@ export const homeDetails: Record<HomeSlug, HomeDetail> = {
     fullAddress: "〒581-0018 大阪府八尾市美園町3-78-1 ピアパーク美園401・402",
     spec: [
       { dt: "定員", dd: "5名（男性）" },
-      { dt: "空床状況", dd: "1部屋空きあり" },
+      { dt: "空床状況", dd: "満床" },
       { dt: "対象", dd: "身体・知的・精神障がい" },
       { dt: "支援体制", dd: "世話人・生活支援員 / 夜間支援あり" },
     ],

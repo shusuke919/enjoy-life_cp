@@ -35,10 +35,10 @@ export const homes: Home[] = [
     area: "大阪府八尾市",
     rooms: "定員 5名（男性）",
     type: "共同生活援助",
-    features: ["1部屋空きあり", "男性専用"],
+    features: ["満床", "男性専用"],
     color: "#6FBA6C",
-    vacancy: "1部屋空きあり",
-    vacancyStatus: "available",
+    vacancy: "満床",
+    vacancyStatus: "full",
   },
   {
     slug: "kyuhoji",
@@ -129,6 +129,11 @@ export const flow: FlowStep[] = [
   { step: "04", title: "アセスメント", d: "ご本人・ご家族・関係機関と共に、支援計画を作成します。", c: "#E85A8A" },
   { step: "05", title: "ご入居", d: "受給者証の準備が整い次第、ご入居となります。新しい暮らしの始まりです。", c: "#5BB8D6" },
 ];
+
+export const instagram = {
+  handle: "peaceyao_gh",
+  url: "https://www.instagram.com/peaceyao_gh/",
+};
 
 export const navItems = [
   { id: "about", label: "enjoy lifeについて" },
