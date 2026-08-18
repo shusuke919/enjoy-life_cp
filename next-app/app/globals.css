@@ -1379,6 +1379,137 @@ body {
   to { opacity: 1; transform: none; }
 }
 
+/* ============ INSTAGRAM ============ */
+.va-insta {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  /* 写真の帯を画面端まで伸ばすため、横のはみ出しはここで止める */
+  overflow: hidden;
+}
+.va-insta-head {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.va-insta-title {
+  font-family: var(--font-zen-maru), serif;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+.va-insta-text {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--ink-soft);
+  margin: 0 0 26px;
+}
+.va-insta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  color: #fff;
+  /* Instagramのブランドカラー。サイト側の配色に寄せず本家の並びのまま使う */
+  background: linear-gradient(135deg, #f5a73f 0%, #e85a8a 55%, #8a4fd1 100%);
+  box-shadow: 0 8px 20px rgba(232, 90, 138, 0.28);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.va-insta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(232, 90, 138, 0.34);
+}
+.va-insta-btn .va-insta-glyph svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+/* 写真の帯。画面幅いっぱいに広げて、途切れずに流す */
+.va-insta-marquee {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  /* 両端を背景へ溶かして、切れているのではなく続いて見えるようにする */
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.va-insta-track {
+  display: flex;
+  width: max-content;
+  /* gap ではなく margin で間隔を作る。1周の幅が「タイル幅+間隔」の整数倍になり、
+     -50% ずらしたときに継ぎ目がぴったり重なる */
+  animation: va-insta-scroll 70s linear infinite;
+}
+.va-insta-marquee:hover .va-insta-track {
+  animation-play-state: paused;
+}
+.va-insta-tile {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 232px;
+  height: 232px;
+  margin-right: 14px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+.va-insta-tile img {
+  transition: transform 0.5s;
+}
+.va-insta-tile:hover img {
+  transform: scale(1.07);
+}
+.va-insta-tile:focus-visible {
+  outline: 2px solid #e85a8a;
+  outline-offset: 3px;
+}
+.va-insta-video {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+.va-insta-video svg {
+  width: 14px;
+  height: 14px;
+}
+@keyframes va-insta-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* 動きを止める代わりに、自分で横スクロールして見られるようにする */
+  .va-insta-track {
+    animation: none;
+  }
+  .va-insta-marquee {
+    overflow-x: auto;
+  }
+  .va-insta-tile img,
+  .va-insta-tile:hover img {
+    transition: none;
+    transform: none;
+  }
+}
+
 /* ============ FOOTER ============ */
 .va-footer {
   background: #2b2622;
@@ -1510,4 +1641,7 @@ body {
   .va-vacancy-board { padding: 14px 16px; }
   .va-br-pc { display: none; }
   .va-form-row { grid-template-columns: 1fr; }
+  .va-insta { padding-top: 56px; padding-bottom: 56px; }
+  .va-insta-head { margin-bottom: 28px; }
+  .va-insta-tile { width: 150px; height: 150px; margin-right: 10px; border-radius: 14px; }
 }

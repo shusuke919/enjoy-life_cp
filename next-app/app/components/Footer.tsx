@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { instagram } from "../lib/data";
 
 export default function Footer() {
   return (
@@ -30,6 +31,9 @@ export default function Footer() {
             <a href="#flow">入居までの流れ</a>
             <a href="#faq">よくある質問</a>
             <a href="#contact">お問い合わせ</a>
+            <a href={instagram.url} target="_blank" rel="noopener noreferrer">
+              Instagram（@{instagram.handle}）
+            </a>
           </div>
         </div>
       </div>

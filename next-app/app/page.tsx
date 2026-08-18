@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Homes from "./components/Homes";
+import Instagram from "./components/Instagram";
 import Reveal from "./components/Reveal";
 import Service from "./components/Service";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <Instagram />
       <Service />
       <Homes />
       <Flow />
